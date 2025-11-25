@@ -1,267 +1,4 @@
 <style>
-/* --- UI doplnění – abecední index a dlaždice --- */
-
-.situace-index {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-}
-
-.situace-index .index-label {
-  font-weight: 600;
-}
-
-.situace-index a {
-  text-decoration: none;
-  padding: 0.15rem 0.4rem;
-  border-radius: 3px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-/* Hover efekt */
-.situace-index a:hover {
-  border-color: #cfd8e3;
-  background-color: #f3f6fb;
-}
-
-/* Aktivní písmeno */
-.situace-index a.is-active {
-  background-color: #0066cc;
-  border-color: #0066cc;
-  color: #fff;
-  font-weight: 600;
-}
-
-/* Focus ring pro přístupnost (klávesnice, screenreadery) */
-.situace-index a:focus-visible {
-  outline: 2px solid #ff9800;
-  outline-offset: 2px;
-}
-
-/* Drobné oživení dlaždic */
-#situace-overview .tile {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-#situace-overview .tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-/* Pulse animace pro "skok" na podsekci */
-#situace-overview .tile.highlight-pulse {
-  animation: tile-pulse 0.5s ease;
-}
-
-@keyframes tile-pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(0,0,0,0);
-  }
-  50% {
-    transform: scale(1.01);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(0,0,0,0);
-  }
-}
-
-/* "Zpět na začátek" – styling */
-.situace-back {
-  margin-top: 1.5rem;
-  text-align: right;
-}
-
-.situace-back #situace-back-top {
-  font-size: 0.875rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid #cfd8e3;
-  background-color: #f7f9fc;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-}
-
-.situace-back #situace-back-top:hover {
-  background-color: #e5edf8;
-  border-color: #b0c4e2;
-  transform: translateY(-1px);
-}
-
-.situace-back #situace-back-top:focus-visible {
-  outline: 2px solid #ff9800;
-  outline-offset: 2px;
-}
-
-
-/* Tematická navigace – pás štítků pro hlavní oblasti */
-.theme-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.theme-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-}
-
-.theme-chip:hover {
-  transform: translateY(-1px);
-}
-
-/* Jemné barevné odlišení témat */
-.theme-chip--finance {
-  background-color: #e3f2fd;
-  border-color: #bbdefb;
-}
-
-.theme-chip--finance:hover {
-  background-color: #d2e7fb;
-}
-
-.theme-chip--legislativa {
-  background-color: #ffebee;
-  border-color: #ffcdd2;
-}
-
-.theme-chip--legislativa:hover {
-  background-color: #ffd7dd;
-}
-
-.theme-chip--data {
-  background-color: #e8f5e9;
-  border-color: #c8e6c9;
-}
-
-.theme-chip--data:hover {
-  background-color: #dbefdd;
-}
-
-.theme-chip--kvalita {
-  background-color: #fff8e1;
-  border-color: #ffecb3;
-}
-
-.theme-chip--kvalita:hover {
-  background-color: #ffefc2;
-}
-
-.theme-chip--vzory {
-  background-color: #f3e5f5;
-  border-color: #e1bee7;
-}
-
-.theme-chip--vzory:hover {
-  background-color: #ebd7f0;
-}
-
-/* Micro-karty s doporučeními */
-.micro-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.micro-card {
-  border-radius: 12px;
-  border: 1px solid #e0e5ec;
-  padding: 0.9rem 1rem;
-  background-color: #fafbfc;
-  font-size: 0.9rem;
-}
-
-.micro-card h3 {
-  font-size: 0.95rem;
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-}
-
-.micro-card ul {
-  margin: 0.2rem 0 0;
-  padding-left: 1.1rem;
-}
-
-.micro-card--warning {
-  border-color: #ffe0b2;
-  background-color: #fff8e1;
-}
-
-/* HOW-TO vizuálně výrazný box */
-.howto-box {
-    border-left: 6px solid #1976d2;
-    background: #f4f9ff;
-    padding: 1.5rem 1.8rem;
-    margin: 1.8rem 0 2.2rem;
-    border-radius: 8px;
-}
-.howto-box h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    color: #0d47a1;
-}
-.howto-box h4 {
-    margin-top: 1.1rem;
-    font-size: 1.05rem;
-    color: #0d47a1;
-}
-.howto-box p {
-    margin-bottom: 0.7rem;
-}
-.howto-box ul {
-    margin: 0.4rem 0 1rem 1.2rem;
-    padding: 0;
-}
-
-/* Collapsible varianta HOW-TO boxu */
-.howto-collapsible {
-    padding: 0.8rem 1rem;
-}
-.howto-collapsible summary {
-    list-style: none;
-    cursor: pointer;
-    font-weight: 600;
-    color: #0d47a1;
-    outline: none;
-}
-.howto-collapsible summary::-webkit-details-marker {
-    display: none;
-}
-.howto-collapsible summary::before {
-    content: "▶";
-    display: inline-block;
-    margin-right: 0.4rem;
-    font-size: 0.8rem;
-    transform: translateY(-1px);
-}
-.howto-collapsible[open] summary::before {
-    content: "▼";
-}
-.howto-inner {
-    margin-top: 0.4rem;
-    padding-top: 0.4rem;
-    border-top: 1px solid #e0e5ec;
-}
-</style>
-
-<style>
     :root {
         --edu-blue: #003b7a;
         --edu-blue-mid: #1f4a87;
@@ -334,6 +71,19 @@
         padding: 32px 16px 48px;
         max-width: 1100px;
         margin: 0 auto;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+        color: #93a5b8;
+    }
+
+    .breadcrumb a {
+        color: #dbe5f0;
+        text-decoration: none;
     }
 
     .section-header-eyebrow {
@@ -714,32 +464,134 @@
         display: block;
     }
 
+    /* --- DOPLNĚNÉ – abecední index a dlaždice --- */
+    .situace-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+    }
 
-/* HOW-TO vizuálně výrazný box */
-.howto-box {
-    border-left: 6px solid #1976d2;
-    background: #f4f9ff;
-    padding: 1.5rem 1.8rem;
-    margin: 1.8rem 0 2.2rem;
-    border-radius: 8px;
-}
-.howto-box h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    color: #0d47a1;
-}
-.howto-box h4 {
-    margin-top: 1.1rem;
-    font-size: 1.05rem;
-    color: #0d47a1;
-}
-.howto-box p {
-    margin-bottom: 0.7rem;
-}
-.howto-box ul {
-    margin: 0.4rem 0 1rem 1.2rem;
-    padding: 0;
-}
+    .situace-index .index-label {
+      font-weight: 600;
+      color: #4b6278;
+    }
+
+    .situace-index a {
+      text-decoration: none;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    /* Hover efekt */
+    .situace-index a:hover {
+      border-color: #c0d0f0;
+      background-color: #f3f6fb;
+    }
+
+    /* Aktivní písmeno */
+    .situace-index a.is-active {
+      background-color: #0046cc;
+      border-color: #0046cc;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Focus ring pro přístupnost (klávesnice, screenreadery) */
+    .situace-index a:focus-visible {
+      outline: 2px solid #ff9800;
+      outline-offset: 2px;
+    }
+
+    /* Drobná oživení dlaždic */
+    .situace-overview .tile {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .situace-overview .tile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Pulse efekt po kliknutí */
+    .highlight-pulse {
+      animation: tile-pulse 0.5s ease;
+    }
+
+    @keyframes tile-pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+      }
+      50% {
+        transform: scale(1.01);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+      }
+    }
+
+    /* "Zpět na začátek" – styling */
+    .situace-back {
+      margin-top: 1.5rem;
+      text-align: right;
+    }
+
+    .situace-back #situace-back-top {
+      font-size: 0.875rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 4px;
+      border: 1px solid #cfd8e3;
+      background-color: #f7f9fc;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .situace-back #situace-back-top:hover {
+      background-color: #e5edf8;
+      border-color: #b0c4e2;
+      transform: translateY(-1px);
+    }
+
+    .situace-back #situace-back-top:focus-visible {
+      outline: 2px solid #ff9800;
+      outline-offset: 2px;
+    }
+
+
+    /* Tematická navigace – pás štítků pro hlavní oblasti */
+    .theme-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .theme-nav .theme-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #d0d8e5;
+      background: #f4f7fb;
+      color: #4b5c7a;
+    }
+
+    /* Jemné oddělení sekcí v situacích */
+    .page hr {
+      border: none;
+      border-top: 1px solid #e0e6f0;
+      margin: 1.75rem 0 1.25rem;
+    }
 </style>
 
 
@@ -801,13 +653,241 @@
     });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const overview = document.getElementById('situace-overview');
+  if (!overview) return;
+
+  const grid = overview.querySelector('.grid');
+  const indexContainer = overview.querySelector('.situace-index');
+  const backTopBtn = document.getElementById('situace-back-top');
+  if (backTopBtn) {
+    backTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  if (!grid || !indexContainer) return;
+
+  const tiles = Array.from(grid.querySelectorAll('.tile'));
+  if (!tiles.length) return;
+
+  // Český kolátor (řazení podle češtiny)
+  let collator;
+  try {
+    collator = new Intl.Collator('cs', { sensitivity: 'base' });
+  } catch (e) {
+    collator = {
+      compare: function (a, b) {
+        return (a || '').localeCompare(b || '');
+      }
+    };
+  }
+
+  // ČESKÁ ABECEDA včetně samostatného "Ch"
+  const alphabetOrder = [
+    'A','Á','B','C','Č','D','Ď','E','É','Ě','F','G','H','Ch',
+    'I','Í','J','K','L','M','N','Ň','O','Ó','P','Q','R','Ř',
+    'S','Š','T','Ť','U','Ú','Ů','V','W','X','Y','Ý','Z','Ž'
+  ];
+
+  function getLetterKey(title) {
+    const trimmed = (title || '').trim();
+    if (!trimmed) return '#';
+
+    let first = trimmed[0].toUpperCase();
+    let second = trimmed[1] ? trimmed[1].toLowerCase() : '';
+
+    if (first === 'C' && (second === 'h' || second === 'H')) {
+      return 'Ch';
+    }
+    return first;
+  }
+
+  const tilesData = tiles.map(tile => {
+    const titleEl = tile.querySelector('.tile-title') || tile;
+    const titleText = (titleEl.textContent || '').trim();
+    const letter = getLetterKey(titleText);
+    return { tile, title: titleText, letter };
+  });
+
+  tilesData.sort((a, b) => {
+    const keyA = a.letter;
+    const keyB = b.letter;
+
+    if (keyA === keyB) {
+      return collator.compare(a.title, b.title);
+    }
+
+    const indexA = alphabetOrder.indexOf(keyA);
+    const indexB = alphabetOrder.indexOf(keyB);
+
+    if (indexA === -1 && indexB === -1) {
+      return collator.compare(a.title, b.title);
+    }
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+
+    return indexA - indexB;
+  });
+
+  const groups = new Map();
+  tilesData.forEach(item => {
+    if (!groups.has(item.letter)) {
+      groups.set(item.letter, []);
+    }
+    groups.get(item.letter).push(item);
+  });
+
+  const tilesContainer = grid;
+  tilesContainer.innerHTML = '';
+
+  groups.forEach((items, letter) => {
+    items.forEach(obj => {
+      if (!obj.tile.id) {
+        const slug = obj.title
+          .toLowerCase()
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+        obj.tile.id = `situace-${slug}`;
+      }
+    });
+  });
+
+  const sortedLetters = Array.from(groups.keys()).sort((a, b) => {
+    const indexA = alphabetOrder.indexOf(a);
+    const indexB = alphabetOrder.indexOf(b);
+
+    if (indexA === -1 && indexB === -1) {
+      return collator.compare(a, b);
+    }
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+
+    return indexA - indexB;
+  });
+
+  const indexLabel = document.createElement('span');
+  indexLabel.className = 'index-label';
+  indexLabel.textContent = 'Vyberte písmeno:';
+  indexContainer.innerHTML = '';
+  indexContainer.appendChild(indexLabel);
+
+  const indexLinks = [];
+
+  sortedLetters.forEach(letter => {
+    const groupTile = groups.get(letter)[0].tile;
+
+    const initial = letter;
+    const letterId = `group-${initial}`;
+    groupTile.id = groupTile.id || letterId;
+
+    const link = document.createElement('a');
+    link.href = `#${groupTile.id}`;
+    link.textContent = letter;
+    link.setAttribute('data-letter', letter);
+
+    indexContainer.appendChild(link);
+    indexLinks.push(link);
+  });
+
+  sortedLetters.forEach(letter => {
+    const groupItems = groups.get(letter);
+    groupItems.forEach(item => {
+      tilesContainer.appendChild(item.tile);
+    });
+  });
+
+  const HEADER_OFFSET = 120;
+
+  function highlightActiveLink() {
+    const scrollPos = window.scrollY || window.pageYOffset;
+    let currentId = null;
+
+    groups.forEach(items => {
+      if (!items.length) return;
+      const tile = items[0].tile;
+      if (!tile || !tile.id) return;
+
+      const rect = tile.getBoundingClientRect();
+      const top = rect.top + scrollPos;
+
+      if (top - HEADER_OFFSET <= scrollPos) {
+        currentId = tile.id;
+      }
+    });
+
+    indexLinks.forEach(link => {
+      const hrefId = (link.getAttribute('href') || '').substring(1);
+      link.classList.toggle('is-active', hrefId === currentId);
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        highlightActiveLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  highlightActiveLink();
+
+  function pulseTile(tile) {
+    if (!tile) return;
+
+    tile.classList.add('highlight-pulse');
+    setTimeout(function () {
+      tile.classList.remove('highlight-pulse');
+    }, 600);
+  }
+
+  indexContainer.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    const targetId = href.substring(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    const rect = target.getBoundingClientRect();
+    const elementPosition = rect.top + scrollPos;
+    const offsetPosition = elementPosition - HEADER_OFFSET;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+
+    indexLinks.forEach(a => a.classList.remove('is-active'));
+    link.classList.add('is-active');
+
+    pulseTile(target);
+  });
+
+
+});
+</script>
+
 </head>
 
 <body>
 
 <header>
     <div class="container">
-        
+        <div class="breadcrumb"><a href="#">EDU.cz</a> / Pro zřizovatele</div>
         <h1>Pro zřizovatele škol a školských zařízení</h1>
         <p>
             Role zřizovatele je klíčová pro kvalitu a stabilitu vzdělávání v obcích a krajích. 
@@ -816,6 +896,22 @@
         </p>
     </div>
 </header>
+
+<div class="subnav-wrapper">
+    <div class="subnav-inner">
+        <div class="subnav-title">Co zde najdete</div>
+        <nav class="subnav">
+            <button data-section="overview" onclick="showSection('overview')" class="active">Přehled sekce</button>
+            <button data-section="situace" onclick="showSection('situace')">Situace a jejich řešení</button>
+            <button data-section="finance" onclick="showSection('finance')">Finance a rozpočty</button>
+            <button data-section="standard" onclick="showSection('standard')">Standard zřizovatele</button>
+            <button data-section="legislativa" onclick="showSection('legislativa')">Legislativní minimum</button>
+            <button data-section="data" onclick="showSection('data')">Data a analýzy</button>
+            <button data-section="vzory" onclick="showSection('vzory')">Vzory a šablony</button>
+            <button data-section="kvalita" onclick="showSection('kvalita')">Kvalita a podpora škol</button>
+        </nav>
+    </div>
+</div>
 
 <div class="subnav-wrapper">
     <div class="subnav-inner">
@@ -959,6 +1055,13 @@
 
     <!-- Životní situace -->
     <section id="section-situace" class="section" style="display:none;">
+        <nav class="breadcrumbs">
+            <a href="/">EDU.cz</a>
+            <span class="sep">/</span>
+            <a href="/zrizovatel">Pro zřizovatele</a>
+            <span class="sep">/</span>
+            <span class="current">Situace a jejich řešení</span>
+        </nav>
 
         <div class="section-header-eyebrow">Situace z praxe</div>
         <h2>Situace a jejich řešení</h2>
@@ -1304,9 +1407,9 @@
 
  <!-- SEM VLOŽENÝ BUTTON -->
  <div class="situace-back">
-  <button type="button" id="back-to-top" class="btn-back-top">
-  Zpět na začátek
-  </button>
+   <button type="button" id="situace-back-top">
+     Zpět na začátek
+   </button>
  </div>
 </div> <!-- ← KONEC #situace-overview -->
 
