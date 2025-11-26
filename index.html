@@ -770,14 +770,20 @@
         });
     }
 
-    function showSituacePage(pageId) {
+        function showSituacePage(pageId) {
         const pages = document.querySelectorAll('.situace-page');
         pages.forEach(p => {
             p.style.display = (p.id === pageId) ? 'block' : 'none';
         });
         const overview = document.getElementById('situace-overview');
-        if (overview) {
-            overview.style.display = pageId ? 'none' : 'block';
+        const tools = document.getElementById('situace-tools');
+
+        if (!pageId) {
+            if (overview) overview.style.display = 'block';
+            if (tools) tools.style.display = 'block';
+        } else {
+            if (overview) overview.style.display = 'none';
+            if (tools) tools.style.display = 'none';
         }
     }
 
@@ -950,83 +956,48 @@
 <!-- Životní situace -->
 <section class="section" id="section-situace" style="display:none;">
 <div class="section-header-eyebrow">Situace z praxe zřizovatele</div>
-<h2>Situace a jejich řešení</h2>
-<p class="section-lead">
+<div id="situace-tools"><h2>Situace a jejich řešení</h2><p class="section-lead">
             Konkrétní scénáře, které zřizovatel v praxi řeší – od jmenování ředitele, přes slučování škol 
             až po náhlé havárie. Každá situace obsahuje přehled kroků, rolí, vzorů dokumentů a častých chyb. Jednotlivé situace jsou provázány s hlavními tematickými oblastmi role zřizovatele (strategie, finance, kvalita, legislativa, komunikace aj.), aby bylo zřejmé, jak zapadají do širšího rámce podpory škol.
-        </p>
-<!-- 🔍 FILTR + VÍCE TÉMAT (CHECKBOXY) -->
-<div class="tiles-filter-bar">
+        </p><div class="tiles-filter-bar">
 <!-- Vyhledávání -->
 <input id="tileSearch" onkeyup="filterTiles()" placeholder="🔍 Hledat situaci…" type="text"/>
 <!-- Nadpis sekce filtrů -->
 <div class="tiles-filter-heading">Témata situací (z pohledu zřizovatele):</div>
 <!-- Checkboxové filtry -->
 <div class="tiles-checkboxes"><label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="vzdelavaci-system"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="vzdelavaci-system"/>
   VZDĚLÁVACÍ SYSTÉM
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="zrizovatelska-pusobnost"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="zrizovatelska-pusobnost"/>
   ZŘIZOVATELSKÁ PŮSOBNOST
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="personalni-rizeni"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="personalni-rizeni"/>
   PERSONÁLNÍ ŘÍZENÍ
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="majetek-finance"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="majetek-finance"/>
   MAJETEK A FINANCE
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="provoz-skol"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="provoz-skol"/>
   PROVOZ ŠKOL
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="kontrolni-cinnost"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="kontrolni-cinnost"/>
   KONTROLNÍ ČINNOST
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="komunikace-spoluprace"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="komunikace-spoluprace"/>
   KOMUNIKACE A SPOLUPRÁCE
 </label>
-
 <label>
-  <input type="checkbox"
-         class="tagFilter"
-         value="kvalitni-vzdelavani"
-         onchange="filterTiles()">
+<input class="tagFilter" onchange="filterTiles()" type="checkbox" value="kvalitni-vzdelavani"/>
   NA CESTĚ KE KVALITNÍMU VZDĚLÁVÁNÍ
 </label></div>
-</div>
-<style>
+</div><style>
   .tiles-filter-bar {
     margin: 20px 0 10px;
   }
@@ -1060,7 +1031,11 @@
     gap: 6px;
     cursor: pointer;
   }
-</style>
+</style></div>
+
+<!-- 🔍 FILTR + VÍCE TÉMAT (CHECKBOXY) -->
+
+
 <div id="situace-overview">
 <div class="situace-index">
 <span class="index-label">
