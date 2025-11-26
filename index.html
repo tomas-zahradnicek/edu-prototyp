@@ -790,6 +790,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         showSection('overview');
         showSituacePage('');
+        if (typeof filterTiles === 'function') { filterTiles(); }
 
         // Accordion toggle – umožní rozbalování jednotlivých položek
         document.querySelectorAll('.accordion .acc-title').forEach(function(btn) {
@@ -996,7 +997,7 @@
 <label>
 <input class="tagFilter" onchange="filterTiles()" type="checkbox" value="kvalitni-vzdelavani"/>
   NA CESTĚ KE KVALITNÍMU VZDĚLÁVÁNÍ
-</label></div>
+</label></div><div class="tiles-filter-meta"><span id="situace-count">Nalezené situace: 0</span><button class="situace-reset-btn" onclick="resetSituaceFilters()" type="button">Vymazat filtry</button></div>
 </div><style>
   .tiles-filter-bar {
     margin: 20px 0 10px;
@@ -1031,11 +1032,60 @@
     gap: 6px;
     cursor: pointer;
   }
+
+
+  .tiles-filter-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .situace-reset-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .situace-reset-btn:hover {
+    background: #e9e9e9;
+  }
+
+  .tiles-filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f5f7fa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .tile-tags {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .tile-tags-label {
+    font-weight: 500;
+    margin-right: 4px;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px 4px 0 0;
+    border-radius: 999px;
+    font-size: 12px;
+    background: #eef3fb;
+  }
 </style></div>
-
 <!-- 🔍 FILTR + VÍCE TÉMAT (CHECKBOXY) -->
-
-
 <div id="situace-overview">
 <div class="situace-index">
 <span class="index-label">
@@ -1101,7 +1151,7 @@
 <span class="tile-desc">
     Infrastruktura, kyberbezpečnost a podpora pedagogů při zavádění digitálních technologií.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Finance a majetek, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Finance a majetek</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost majetek-finance personalni-rizeni" href="javascript:showSituacePage('situace-NEP')" id="situace-letter-F">
 <span class="tile-kicker">
@@ -1113,7 +1163,7 @@
 <span class="tile-desc">
     Co má starosta připravit, když obec převezme financování nepedagogických zaměstnanců školy.
    </span>
-<span class="tile-tags">Týká se oblastí: Finance a majetek, Ředitelé a vedení škol, Legislativa, povinnosti a kontroly</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Finance a majetek</span><span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost" href="javascript:showSituacePage('situace-S')" id="situace-letter-G">
 <span class="tile-kicker">
@@ -1125,7 +1175,7 @@
 <span class="tile-desc">
     Jak zajistit soulad se zákonem a ochránit osobní údaje ve školách.
    </span>
-<span class="tile-tags">Týká se oblastí: Legislativa, povinnosti a kontroly, Komunikace a partnerství</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Komunikace a partnerství</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost majetek-finance provoz-skol vzdelavaci-system" href="javascript:showSituacePage('situace-F')" id="situace-letter-H">
 <span class="tile-kicker">
@@ -1137,7 +1187,7 @@
 <span class="tile-desc">
     Povinnosti zřizovatele při haváriích, živelních pohromách a jiných mimořádných událostech.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Finance a majetek, Legislativa, povinnosti a kontroly, Komunikace a partnerství</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Finance a majetek</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Komunikace a partnerství</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-SYS')" id="situace-letter-J">
 <span class="tile-kicker">
@@ -1149,7 +1199,7 @@
 <span class="tile-desc">
     Úvod pro starosty a radní: kdo za co odpovídá, jaké má obec povinnosti a kde získat klíčové informace.
    </span>
-<span class="tile-tags">Týká se oblastí: Legislativa, povinnosti a kontroly, Strategie a síť škol, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani personalni-rizeni" href="javascript:showSituacePage('situace-C')" id="situace-letter-M">
 <span class="tile-kicker">
@@ -1161,7 +1211,7 @@
 <span class="tile-desc">
     Postup při jmenování, odvolání a výběrovém řízení na ředitele školy.
    </span>
-<span class="tile-tags">Týká se oblastí: Ředitelé a vedení škol, Kvalita vzdělávání a podpora škol, Legislativa, povinnosti a kontroly</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani personalni-rizeni zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-HOD')">
 <span class="tile-kicker">
@@ -1173,9 +1223,7 @@
 <span class="tile-desc">
     Jak nastavit pravidelné hodnocení, kritéria, motivaci a férové odměňování v návaznosti na rozvoj školy.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Ředitel školy, Kvalita školy, Odměňování, Zřizovatel, Kontroly
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitel školy</span><span class="tag-pill">Kvalita školy</span><span class="tag-pill">Odměňování</span><span class="tag-pill">Zřizovatel</span><span class="tag-pill">Kontroly</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kvalitni-vzdelavani personalni-rizeni" href="javascript:showSituacePage('situace-K')" id="situace-letter-K">
 <span class="tile-kicker">
@@ -1187,7 +1235,7 @@
 <span class="tile-desc">
     Jak komunikovat v náročných situacích a předcházet reputačním škodám.
    </span>
-<span class="tile-tags">Týká se oblastí: Komunikace a partnerství, Ředitelé a vedení škol, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Komunikace a partnerství</span><span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost vzdelavaci-system" href="javascript:showSituacePage('situace-V')">
 <span class="tile-kicker">
@@ -1199,7 +1247,7 @@
 <span class="tile-desc">
     Připravenost na krizové situace a spolupráce s IZS a policií.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Legislativa, povinnosti a kontroly, Komunikace a partnerství</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Komunikace a partnerství</span></span>
 </a>
 <a class="tile" data-category="majetek-finance vzdelavaci-system" href="javascript:showSituacePage('situace-E')" id="situace-letter-N">
 <span class="tile-kicker">
@@ -1211,7 +1259,7 @@
 <span class="tile-desc">
     Řešení kapacitních krizí a práce se spádovými obvody.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Finance a majetek</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Finance a majetek</span></span>
 </a>
 <a class="tile" data-category="kvalitni-vzdelavani personalni-rizeni vzdelavaci-system" href="javascript:showSituacePage('situace-J')">
 <span class="tile-kicker">
@@ -1223,7 +1271,7 @@
 <span class="tile-desc">
     Jak může zřizovatel podpořit nábor, stabilizaci a rozvoj pedagogického sboru.
    </span>
-<span class="tile-tags">Týká se oblastí: Ředitelé a vedení škol, Kvalita vzdělávání a podpora škol, Strategie a síť škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span><span class="tag-pill">Strategie a síť škol</span></span>
 </a>
 <a class="tile" data-category="majetek-finance provoz-skol vzdelavaci-system" href="javascript:showSituacePage('situace-M')" id="situace-letter-O">
 <span class="tile-kicker">
@@ -1235,7 +1283,7 @@
 <span class="tile-desc">
     Plánování oprav, investic a úspor v provozu školských budov.
    </span>
-<span class="tile-tags">Týká se oblastí: Finance a majetek, Strategie a síť škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Finance a majetek</span><span class="tag-pill">Strategie a síť škol</span></span>
 </a>
 <!-- Dlaždice: Platový výměr ředitele školy -->
 <a class="tile" data-category="kvalitni-vzdelavani majetek-finance personalni-rizeni zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-PLAT')" id="situace-letter-P">
@@ -1248,9 +1296,7 @@
 <span class="tile-desc">
     Jak nastavit plat a příplatky ředitele, pracovat s motivací a navázat odměňování na výsledky školy.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Ředitel školy, Odměňování, Zřizovatel, Hospodaření, Kvalita školy
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitel školy</span><span class="tag-pill">Odměňování</span><span class="tag-pill">Zřizovatel</span><span class="tag-pill">Hospodaření</span><span class="tag-pill">Kvalita školy</span></span>
 </a>
 <a class="tile" data-category="kvalitni-vzdelavani personalni-rizeni" href="javascript:showSituacePage('situace-U')" id="situace-letter-P">
 <span class="tile-kicker">
@@ -1262,7 +1308,7 @@
 <span class="tile-desc">
     Nástroje zřizovatele pro udržitelnou práci ředitelů a vedení škol.
    </span>
-<span class="tile-tags">Týká se oblastí: Ředitelé a vedení škol, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <!-- Dlaždice: Pracovní poměr ředitele školy -->
 <a class="tile" data-category="personalni-rizeni zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-PPOMER')" id="situace-letter-P2">
@@ -1275,9 +1321,7 @@
 <span class="tile-desc">
     Jak vzniká a mění se pracovní poměr ředitele školy, pracovní smlouva, pověření, změny a povinnosti zřizovatele.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Ředitel školy, Zřizovatel, Organizace školy, Pracovní právo, Personální řízení
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitel školy</span><span class="tag-pill">Zřizovatel</span><span class="tag-pill">Organizace školy</span><span class="tag-pill">Pracovní právo</span><span class="tag-pill">Personální řízení</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kvalitni-vzdelavani personalni-rizeni" href="javascript:showSituacePage('situace-P')" id="situace-letter-Ř">
 <span class="tile-kicker">
@@ -1289,7 +1333,7 @@
 <span class="tile-desc">
     Kdy a jak vstupuje do hry zřizovatel při závažných výchovných problémech.
    </span>
-<span class="tile-tags">Týká se oblastí: Kvalita vzdělávání a podpora škol, Komunikace a partnerství, Ředitelé a vedení škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Kvalita vzdělávání a podpora škol</span><span class="tag-pill">Komunikace a partnerství</span><span class="tag-pill">Ředitelé a vedení škol</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost personalni-rizeni" href="javascript:showSituacePage('situace-L')">
 <span class="tile-kicker">
@@ -1301,7 +1345,7 @@
 <span class="tile-desc">
     Role zřizovatele při šetření stížností a ochraně práv účastníků.
    </span>
-<span class="tile-tags">Týká se oblastí: Legislativa, povinnosti a kontroly, Komunikace a partnerství, Ředitelé a vedení škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Komunikace a partnerství</span><span class="tag-pill">Ředitelé a vedení škol</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-O')">
 <span class="tile-kicker">
@@ -1313,7 +1357,7 @@
 <span class="tile-desc">
     Využití synergií mezi školami a společných projektů v území.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Komunikace a partnerství, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Komunikace a partnerství</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <a <a="" class="tile" data-category="komunikace-spoluprace kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-T')" id="situace-letter-S">
 <span class="tile-kicker">
@@ -1325,7 +1369,7 @@
 <span class="tile-desc">
     Jak zřizovatel podporuje inkluzi, sociálně znevýhodněné a cizince.
    </span>
-<span class="tile-tags">Týká se oblastí: Kvalita vzdělávání a podpora škol, Strategie a síť škol, Komunikace a partnerství</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Kvalita vzdělávání a podpora škol</span><span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Komunikace a partnerství</span></span>
 </a><a class="tile" data-category="kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-SP')" id="situace-letter-S">
 <span class="tile-kicker">
     S
@@ -1336,7 +1380,7 @@
 <span class="tile-desc">
     Jak pracovat s demografií, kapacitami škol a plánovat investice v území.
    </span>
-<span class="tile-tags">Týká se oblastí: Data, Strategie, Kapacity, Investice</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Data</span><span class="tag-pill">Strategie</span><span class="tag-pill">Kapacity</span><span class="tag-pill">Investice</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace personalni-rizeni" href="javascript:showSituacePage('situace-Q')" id="situace-letter-Š">
 <span class="tile-kicker">
@@ -1348,9 +1392,7 @@
 <span class="tile-desc">
     Jak má fungovat školská rada, jak zapojit rodiče a zřizovatele, co projednává a co schvaluje.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Ředitel školy, Rodiče a veřejnost, Dokumenty školy, Spolupráce aktérů
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitel školy</span><span class="tag-pill">Rodiče a veřejnost</span><span class="tag-pill">Dokumenty školy</span><span class="tag-pill">Spolupráce aktérů</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace vzdelavaci-system" href="javascript:showSituacePage('situace-OBVODY')">
 <span class="tile-kicker">
@@ -1362,9 +1404,7 @@
 <span class="tile-desc">
     Jak nastavit spádové obvody, předcházet přeplnění škol, plánovat kapacity a bránit segregaci v území.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Kapacity škol, Síť škol, Legislativa, Prevence segregace, Data a analýzy, Spolupráce obcí
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Kapacity škol</span><span class="tag-pill">Síť škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">Prevence segregace</span><span class="tag-pill">Data a analýzy</span><span class="tag-pill">Spolupráce obcí</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani personalni-rizeni vzdelavaci-system" href="javascript:showSituacePage('situace-R')" id="situace-letter-V">
 <span class="tile-kicker">
@@ -1376,7 +1416,7 @@
 <span class="tile-desc">
     Jak číst výroční zprávy školy a využít je pro řízení kvality.
    </span>
-<span class="tile-tags">Týká se oblastí: Kvalita vzdělávání a podpora škol, Legislativa, povinnosti a kontroly, Ředitelé a vedení škol, Strategie a síť škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Kvalita vzdělávání a podpora škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Ředitelé a vedení škol</span><span class="tag-pill">Strategie a síť škol</span></span>
 </a>
 <!-- Dlaždice: Rejstřík škol a školských zařízení -->
 <a class="tile" data-category="vzdelavaci-system" href="javascript:showSituacePage('situace-REJSTRIK_1')" id="situace-letter-R">
@@ -1389,9 +1429,7 @@
 <span class="tile-desc">
     Jak pracovat s rejstříkem škol, ověřovat správnost údajů, hlásit změny a využívat data pro řízení školy i sítě škol.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Data a analýzy, Legislativa, síť škol, Strategie, Kapacity
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Data a analýzy</span><span class="tag-pill">Legislativa</span><span class="tag-pill">síť škol</span><span class="tag-pill">Strategie</span><span class="tag-pill">Kapacity</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost vzdelavaci-system" href="javascript:showSituacePage('situace-REJSTRIK')" id="situace-letter-R">
 <span class="tile-kicker">
@@ -1403,7 +1441,7 @@
 <span class="tile-desc">
     Jak hlídat správnost údajů v rejstříku, kdy žádat o změnu a jak data z rejstříku využít pro rozhodování.
    </span>
-<span class="tile-tags">Týká se oblastí: Legislativa, povinnosti a kontroly, Data a analýzy, Strategie a síť škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Data a analýzy</span><span class="tag-pill">Strategie a síť škol</span></span>
 </a>
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani" href="javascript:showSituacePage('situace-I')" id="situace-letter-Z">
 <span class="tile-kicker">
@@ -1415,7 +1453,7 @@
 <span class="tile-desc">
     Přehled kontrolních orgánů a povinností zřizovatele vůči škole.
    </span>
-<span class="tile-tags">Týká se oblastí: Legislativa, povinnosti a kontroly, Kvalita vzdělávání a podpora škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost vzdelavaci-system zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-G')">
 <span class="tile-kicker">
@@ -1427,7 +1465,7 @@
 <span class="tile-desc">
     Jak postupovat při změně spádových obvodů a komunikaci s veřejností.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Legislativa, povinnosti a kontroly, Komunikace a partnerství</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Komunikace a partnerství</span></span>
 </a>
 <a class="tile" data-category="majetek-finance vzdelavaci-system" href="javascript:showSituacePage('situace-D')">
 <span class="tile-kicker">
@@ -1439,7 +1477,7 @@
 <span class="tile-desc">
     Jak připravit a řídit velké investiční akce v oblasti školství.
    </span>
-<span class="tile-tags">Týká se oblastí: Finance a majetek, Strategie a síť škol</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Finance a majetek</span><span class="tag-pill">Strategie a síť škol</span></span>
 </a>
 <a class="tile" data-category="komunikace-spoluprace kontrolni-cinnost majetek-finance vzdelavaci-system zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-B')">
 <span class="tile-kicker">
@@ -1451,7 +1489,7 @@
 <span class="tile-desc">
     Právní a komunikační postup při změně nebo zrušení školy.
    </span>
-<span class="tile-tags">Týká se oblastí: Strategie a síť škol, Komunikace a partnerství, Legislativa, povinnosti a kontroly, Finance a majetek</span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Komunikace a partnerství</span><span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Finance a majetek</span></span>
 </a>
 <a class="tile" data-category="zrizovatelska-pusobnost" href="javascript:showSituacePage('situace-A')">
 <span class="tile-kicker">
@@ -1479,9 +1517,7 @@
 <span class="tile-desc">
     Co má zřizovací listina obsahovat, kdy ji aktualizovat a jak se vyhnout nejčastějším chybám.
   </span>
-<span class="tile-tags">
-    Týká se oblastí: Legislativa, povinnosti a kontroly, Strategie a síť škol, Ředitelé a vedení škol
-  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span><span class="tag-pill">povinnosti a kontroly</span><span class="tag-pill">Strategie a síť škol</span><span class="tag-pill">Ředitelé a vedení škol</span></span>
 </a>
 </div> <!-- ← KONEC .grid -->
 <!-- SEM VLOŽENÝ BUTTON -->
@@ -6745,6 +6781,33 @@ if (backTopBtn) {
 });
 </script>
 <script>
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function clearHighlights(tile) {
+  var selectors = ['.tile-title', '.tile-desc', '.tile-tags'];
+  selectors.forEach(function(sel) {
+    var el = tile.querySelector(sel);
+    if (el) {
+      el.innerHTML = el.innerText;
+    }
+  });
+}
+
+function applyHighlight(tile, query) {
+  if (!query) return;
+  var selectors = ['.tile-title', '.tile-desc', '.tile-tags'];
+  var regex = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+  selectors.forEach(function(sel) {
+    var el = tile.querySelector(sel);
+    if (el) {
+      var text = el.innerText;
+      el.innerHTML = text.replace(regex, '<mark>$1</mark>');
+    }
+  });
+}
+
 function filterTiles() {
   var searchInput = document.getElementById("tileSearch");
   var searchQuery = searchInput ? searchInput.value.toLowerCase() : "";
@@ -6756,9 +6819,12 @@ function filterTiles() {
   }
 
   var tiles = document.querySelectorAll("#situace-overview .tile");
+  var visibleCount = 0;
 
   for (var j = 0; j < tiles.length; j++) {
     var tile = tiles[j];
+
+    clearHighlights(tile);
 
     var titleEl = tile.querySelector(".tile-title");
     var descEl  = tile.querySelector(".tile-desc");
@@ -6785,12 +6851,36 @@ function filterTiles() {
       });
 
     if (textMatch && categoryMatch) {
-      // ⬇⬇⬇ tady je zásadní změna oproti předchozí verzi
       tile.style.display = "";      // použije původní vzhled z CSS (karta)
+      visibleCount++;
+      if (searchQuery) {
+        applyHighlight(tile, searchQuery);
+      }
     } else {
       tile.style.display = "none";  // schová dlaždici
     }
   }
+
+  var countEl = document.getElementById("situace-count");
+  if (countEl) {
+    if (visibleCount === 0) {
+      countEl.innerText = "Nenašli jsme žádnou situaci. Upravte hledaný výraz nebo filtry.";
+    } else {
+      countEl.innerText = "Nalezené situace: " + visibleCount;
+    }
+  }
+}
+
+function resetSituaceFilters() {
+  var searchInput = document.getElementById("tileSearch");
+  if (searchInput) {
+    searchInput.value = "";
+  }
+  var checked = document.querySelectorAll(".tagFilter:checked");
+  for (var i = 0; i < checked.length; i++) {
+    checked[i].checked = false;
+  }
+  filterTiles();
 }
 </script>
 </body>
