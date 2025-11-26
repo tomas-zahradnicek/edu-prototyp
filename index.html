@@ -962,7 +962,69 @@
 <!-- Nadpis sekce filtrů -->
 <div class="tiles-filter-heading">Témata situací (z pohledu zřizovatele):</div>
 <!-- Checkboxové filtry -->
-<div class="tiles-checkboxes"><label><input class="tagFilter" type="checkbox" value="vzdelavaci-system"/> VZDĚLÁVACÍ SYSTÉM</label><label><input class="tagFilter" type="checkbox" value="zrizovatelska-pusobnost"/> ZŘIZOVATELSKÁ PŮSOBNOST</label><label><input class="tagFilter" type="checkbox" value="personalni-rizeni"/> PERSONÁLNÍ ŘÍZENÍ</label><label><input class="tagFilter" type="checkbox" value="majetek-finance"/> MAJETEK A FINANCE</label><label><input class="tagFilter" type="checkbox" value="provoz-skol"/> PROVOZ ŠKOL</label><label><input class="tagFilter" type="checkbox" value="kontrolni-cinnost"/> KONTROLNÍ ČINNOST</label><label><input class="tagFilter" type="checkbox" value="komunikace-spoluprace"/> KOMUNIKACE A SPOLUPRÁCE</label><label><input class="tagFilter" type="checkbox" value="kvalitni-vzdelavani"/> NA CESTĚ KE KVALITNÍMU VZDĚLÁVÁNÍ</label></div>
+<div class="tiles-checkboxes"><label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="vzdelavaci-system"
+         onchange="filterTiles()">
+  VZDĚLÁVACÍ SYSTÉM
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="zrizovatelska-pusobnost"
+         onchange="filterTiles()">
+  ZŘIZOVATELSKÁ PŮSOBNOST
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="personalni-rizeni"
+         onchange="filterTiles()">
+  PERSONÁLNÍ ŘÍZENÍ
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="majetek-finance"
+         onchange="filterTiles()">
+  MAJETEK A FINANCE
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="provoz-skol"
+         onchange="filterTiles()">
+  PROVOZ ŠKOL
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="kontrolni-cinnost"
+         onchange="filterTiles()">
+  KONTROLNÍ ČINNOST
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="komunikace-spoluprace"
+         onchange="filterTiles()">
+  KOMUNIKACE A SPOLUPRÁCE
+</label>
+
+<label>
+  <input type="checkbox"
+         class="tagFilter"
+         value="kvalitni-vzdelavani"
+         onchange="filterTiles()">
+  NA CESTĚ KE KVALITNÍMU VZDĚLÁVÁNÍ
+</label></div>
 </div>
 <style>
   .tiles-filter-bar {
