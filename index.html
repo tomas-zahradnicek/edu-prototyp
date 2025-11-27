@@ -261,6 +261,77 @@
 }
 </style>
 <style>
+/* A–F panel v režimu záložek (situace-af--tabs-minimal) */
+
+.situace-af {
+  margin: 2rem 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e0e4ec;
+}
+
+.situace-af-heading {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.situace-af-intro {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* řada tlačítek A–F */
+.situace-af-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.situace-af-tab {
+  border: 1px solid #d0d7e6;
+  background: #f8f9fc;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.situace-af-tab.is-active {
+  background: #0050b3;
+  border-color: #0050b3;
+  color: #ffffff;
+}
+
+/* vlastní obsah A–F */
+.situace-af-body {
+  margin-top: 0.5rem;
+}
+
+/* výchozí stav – sekce jsou skryté */
+.situace-af-section {
+  display: none;
+}
+
+/* zobrazí se jen aktivní sekce */
+.situace-af-section.is-active {
+  display: block;
+}
+
+/* malé obrazovky – tlačítka přes celou šířku */
+@media (max-width: 640px) {
+  .situace-af-tabs {
+    flex-direction: row;
+  }
+  .situace-af-tab {
+    flex: 1 1 calc(50% - 0.5rem);
+    text-align: center;
+  }
+}
+</style>
+
+<style>
     :root {
         --edu-blue: #003b7a;
         --edu-blue-mid: #1f4a87;
@@ -753,6 +824,29 @@
     padding: 0;
 }
 </style>
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.situace-af-tabs').forEach(function (tabsEl) {
+    const container = tabsEl.closest('.situace-af');
+    const tabs = tabsEl.querySelectorAll('.situace-af-tab');
+    const sections = container.querySelectorAll('.situace-af-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const key = tab.dataset.af;
+
+        tabs.forEach(t =>
+          t.classList.toggle('is-active', t === tab)
+        );
+
+        sections.forEach(sec =>
+          sec.classList.toggle('is-active', sec.dataset.af === key)
+        );
+      });
+    });
+  });
+});
+</script>
 <script>
     function showSection(sectionId) {
         const sections = document.querySelectorAll('.section');
@@ -2909,6 +3003,171 @@ a technického stavu budov.
       </p>
 </div>
 </div>
+<section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+  <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+  <p class="situace-af-intro">
+    Hodnocení a odměňování ředitele je pro zřizovatele klíčový nástroj řízení kvality školy. 
+    Přehled A–F shrnuje, co je povinné, co je dobrá praxe a jak krok po kroku nastavit 
+    srozumitelný a férový systém.
+  </p>
+
+  <nav class="situace-af-tabs" aria-label="Sekce A–F">
+    <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+    <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+    <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+    <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+    <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+    <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+  </nav>
+
+  <div class="situace-af-body">
+    <!-- A -->
+    <section class="situace-af-section is-active" data-af="A">
+      <h4>A. Přehled situace</h4>
+      <p>
+        Ředitel školy je pro kvalitu výuky, klima školy i hospodaření zásadní. 
+        Zřizovatel je zodpovědný za jeho hodnocení a současně rozhoduje o platu, příplatcích a odměnách.
+        Hodnocení nemá být jednorázová kontrola, ale pravidelný dialog o tom, jak se škole daří
+        a jaké cíle si společně stanoví na další období.
+      </p>
+    </section>
+
+    <!-- B -->
+    <section class="situace-af-section" data-af="B">
+      <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+      <ul>
+        <li>
+          Zajistit, aby práce ředitele byla pravidelně hodnocena – v návaznosti na jeho roli, 
+          povinnosti a cíle školy.
+        </li>
+        <li>
+          Rozhodovat o platovém výměru ředitele (tarif, příplatky, osobní příplatek) 
+          a o mimořádných odměnách, v souladu s právními předpisy.
+        </li>
+        <li>
+          Vést hodnocení tak, aby bylo dohledatelné – uchovávat základní záznamy o průběhu a závěrech hodnocení.
+        </li>
+        <li>
+          Zajistit, aby výše platu a odměn byla vnitřně konzistentní s odpovědností ředitele a situací školy.
+        </li>
+        <li>
+          Jasně komunikovat řediteli, jaká jsou očekávání a jak bude hodnocen.
+        </li>
+      </ul>
+    </section>
+
+    <!-- C -->
+    <section class="situace-af-section" data-af="C">
+      <h4>C. Co se doporučuje</h4>
+      <ul>
+        <li>
+          Pracovat s předem stanovenými kritérii hodnocení – např. výsledky školy, práce s lidmi, 
+          hospodaření, spolupráce s obcí, bezpečnost a klima školy.
+        </li>
+        <li>
+          Mít jednoduchý formulář nebo rámec hodnocení, který vznikne z „Kritérií hodnocení zřizovatelem“.
+        </li>
+        <li>
+          Propojovat hodnocení s plánem rozvoje školy – společně stanovovat krátkodobé i dlouhodobé cíle.
+        </li>
+        <li>
+          Navázat nenárokové složky platu (osobní příplatek, odměny) na výsledky hodnocení, 
+          nikoli na aktuální vztahy nebo jednorázové tlaky.
+        </li>
+        <li>
+          Nabízet řediteli podporu – mentoring, vzdělávání, možnost konzultovat složitá témata.
+        </li>
+      </ul>
+    </section>
+
+    <!-- D -->
+    <section class="situace-af-section" data-af="D">
+      <h4>D. Jak postupovat (zjednodušený proces)</h4>
+      <ol>
+        <li>
+          <strong>Nastavte kritéria a pravidla:</strong> napište si okruhy hodnocení a způsob, 
+          jak se promítnou do platu a odměn.
+        </li>
+        <li>
+          <strong>Připravte podklady:</strong> výroční zprávu školy, finanční přehledy, výsledky kontrol, 
+          data o škole a případné podněty z terénu.
+        </li>
+        <li>
+          <strong>Veďte hodnoticí rozhovor:</strong> co se daří, co se nedaří, jaké jsou priority a cíle na další rok. 
+          Přidejte i prostor pro zpětnou vazbu ředitele směrem k obci.
+        </li>
+        <li>
+          <strong>Rozhodněte o platu a odměnách:</strong> na základě hodnocení upravte osobní příplatek 
+          nebo přiznejte/nepřiznejte odměnu – a řediteli vysvětlete důvody.
+        </li>
+        <li>
+          <strong>Zdokumentujte závěr:</strong> stručný zápis z hodnocení, shrnutí dohodnutých kroků 
+          a souvislost s platovým výměrem.
+        </li>
+      </ol>
+    </section>
+
+    <!-- E -->
+    <section class="situace-af-section" data-af="E">
+      <h4>E. Na co si dát pozor</h4>
+      <ul>
+        <li>
+          Formální hodnocení „na oko“ bez jasných kritérií a konkrétních příkladů.
+        </li>
+        <li>
+          Odměny a příplatky bez vazby na výsledky práce ředitele nebo na rozvoj školy.
+        </li>
+        <li>
+          Nejasná komunikace – ředitel neví, za co je hodnocen a co má změnit.
+        </li>
+        <li>
+          Záměna rolí – očekávání, že hodnocení ředitele „zařídí“ školská rada 
+          nebo jiné orgány místo zřizovatele.
+        </li>
+        <li>
+          Využívání odměn jako nástroje k řešení konfliktů či politického tlaku.
+        </li>
+      </ul>
+    </section>
+
+    <!-- F -->
+    <section class="situace-af-section" data-af="F">
+      <h4>F. Podpora a zdroje</h4>
+      <ul>
+        <li>
+          <strong>Metodické doporučení pro zřizovatele k odměňování ředitelů</strong> – 
+          návod, jak nastavit systém odměňování a vazbu na hodnocení.
+        </li>
+        <li>
+          <strong>Kritéria hodnocení zřizovatelem</strong> – materiál, z něhož lze odvodit vlastní hodnoticí formulář.
+        </li>
+        <li>
+          Související situace na EDU.cz – 
+          <em>Platový výměr ředitele školy</em>, <em>Jmenování a odvolání ředitele školy</em>, 
+          <em>Školská rada</em>.
+        </li>
+        <li>
+          Možnost konzultace s krajským úřadem, středním článkem podpory nebo profesními asociacemi ředitelů.
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="situace-af-links">
+    <span class="situace-af-links-label">Související situace:</span>
+    <button class="situace-af-link"
+            type="button"
+            onclick="showSituacePage('situace-PLAT'); window.scrollTo({top:0,behavior:'smooth'});">
+      Platový výměr ředitele školy
+    </button>
+    <button class="situace-af-link"
+            type="button"
+            onclick="showSituacePage('situace-C'); window.scrollTo({top:0,behavior:'smooth'});">
+      Jmenování a odvolání ředitele
+    </button>
+  </div>
+</section>
+
 <!-- Obsah -->
 <div class="accordion situace-HOD">
 <!-- Proč hodnotit -->
@@ -5552,6 +5811,181 @@ Podrobná část níže rozpracovává kroky pro jednotlivé odbory úřadu a uk
                 </p>
 </div>
 </div>
+<section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+  <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+  <p class="situace-af-intro">
+    Změna financování nepedagogické práce posouvá větší odpovědnost na zřizovatele. 
+    A–F přehled shrnuje, co musí obec udělat, jaké má možnosti a na co si dát pozor,
+    aby změna neohrozila provoz škol a byla příležitostí ke zlepšení služeb.
+  </p>
+
+  <nav class="situace-af-tabs" aria-label="Sekce A–F">
+    <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+    <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+    <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+    <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+    <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+    <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+  </nav>
+
+  <div class="situace-af-body">
+    <!-- A -->
+    <section class="situace-af-section is-active" data-af="A">
+      <h4>A. Přehled situace</h4>
+      <p>
+        Od roku 2026 se financování nepedagogických zaměstnanců přesouvá ze státu na zřizovatele.
+        Obec nebo kraj nově rozhoduje, jaké provozní a podpůrné služby budou školy mít, 
+        v jakém rozsahu a jak se promítnou do rozpočtu. Nejde jen o „přesun peněz“, 
+        ale o příležitost nastavit služby efektivněji – např. sdílené pozice, společné služby pro více škol
+        a lepší koordinaci se školním stravováním a dalšími činnostmi.
+      </p>
+    </section>
+
+    <!-- B -->
+    <section class="situace-af-section" data-af="B">
+      <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+      <ul>
+        <li>
+          Zohlednit nové prostředky a náklady na nepedagogické zaměstnance v rozpočtu obce / kraje 
+          a vnitřních rozpočtových pravidlech.
+        </li>
+        <li>
+          Nastavit způsob financování nepedagogické práce u jednotlivých škol 
+          (model, pravidla, podmínky – aby školy věděly, s čím mohou počítat).
+        </li>
+        <li>
+          Vyjasnit, kdo je zaměstnavatelem konkrétních nepedagogických pracovníků 
+          (škola, obec, jiná organizace) a podle toho upravit pracovněprávní vztahy.
+        </li>
+        <li>
+          Informovat ředitele škol, zaměstnance a zastupitelstvo o dopadech změny 
+          a o tom, jak bude financování a organizace nepedagogické práce řešena.
+        </li>
+        <li>
+          Zajistit, aby nastavený model neohrozil základní provoz školy a plnění povinných činností.
+        </li>
+      </ul>
+    </section>
+
+    <!-- C -->
+    <section class="situace-af-section" data-af="C">
+      <h4>C. Co se doporučuje</h4>
+      <ul>
+        <li>
+          Zpracovat přehled všech nepedagogických pozic, úvazků a nákladů ve školách včetně souvisejících služeb 
+          (úklid, údržba, ekonomika, IT, školní jídelny).
+        </li>
+        <li>
+          Zvážit různé modely zajištění služeb – přímo ve škole, centrálně u obce, sdílené týmy 
+          nebo částečně externí dodavatelé – a porovnat jejich výhody a rizika.
+        </li>
+        <li>
+          Zapojit ředitele škol a klíčové odbory úřadu (finance, školství, majetek, personalistika) do přípravy návrhu.
+        </li>
+        <li>
+          Jasně vymezit, k čemu slouží další zdroje (ONIV, FKSP, provozní prostředky) 
+          a nepřenášet na ně systematicky náklady na mzdy nepedagogů.
+        </li>
+        <li>
+          Postupovat po etapách – nejprve přehled a stabilizace, teprve následně případné úspory a optimalizace.
+        </li>
+      </ul>
+    </section>
+
+    <!-- D -->
+    <section class="situace-af-section" data-af="D">
+      <h4>D. Jak postupovat (zjednodušený proces)</h4>
+      <ol>
+        <li>
+          <strong>Zmapujte výchozí stav:</strong> seznam nepedagogických pracovníků, jejich náplň práce, úvazky 
+          a náklady ve všech školách. Zahrňte i služby, které jsou dnes řešeny externě 
+          (úklid, údržba, IT, stravování).
+        </li>
+        <li>
+          <strong>Rozhodněte o modelu zajištění:</strong> vyberte, které činnosti zůstanou ve škole, 
+          které se budou sdílet nebo přesunou pod obec, případně na externího dodavatele.
+        </li>
+        <li>
+          <strong>Připravte rozpočtový rámec:</strong> stanovte, jakou částku bude obec každoročně vyčleňovat 
+          na nepedagogickou práci a jak se rozdělí mezi školy či služby.
+        </li>
+        <li>
+          <strong>Vyřešte personální a právní kroky:</strong> převody zaměstnanců, úprava smluv, nastavení FKSP, 
+          vnitřní směrnice o financování a organizaci nepedagogické práce.
+        </li>
+        <li>
+          <strong>Odkomunikujte změnu:</strong> starosta, vedení obce a ředitelé vysvětlí zaměstnancům i veřejnosti, 
+          co se mění, proč a jak bude zajištěn provoz škol.
+        </li>
+        <li>
+          <strong>Průběžně vyhodnocujte:</strong> sledujte dopady na školy, kvalitu služeb i finance a podle potřeby 
+          upravujte nastavení.
+        </li>
+      </ol>
+    </section>
+
+    <!-- E -->
+    <section class="situace-af-section" data-af="E">
+      <h4>E. Na co si dát pozor</h4>
+      <ul>
+        <li>
+          Podcenění komunikace – nejistota zaměstnanců, obavy z propouštění nebo horších podmínek 
+          mohou vést k odporu proti změně.
+        </li>
+        <li>
+          Nerealistická očekávání úspor – přespříliš rychlé škrty mohou ohrozit provoz školy 
+          a kvalitu prostředí (úklid, údržba, jídelna).
+        </li>
+        <li>
+          Nepřehledná odpovědnost – není jasné, kdo je za nepedagogické pracovníky zodpovědný, 
+          komu se zodpovídají a kdo jim zadává práci.
+        </li>
+        <li>
+          Nedostatečné ošetření přechodu zaměstnanců (pracovní smlouvy, FKSP, benefity, informování).
+        </li>
+        <li>
+          Oddělené řešení nepedagogů a školního stravování – přitom jde o velmi provázané oblasti.
+        </li>
+      </ul>
+    </section>
+
+    <!-- F -->
+    <section class="situace-af-section" data-af="F">
+      <h4>F. Podpora a zdroje</h4>
+      <ul>
+        <li>
+          Metodické materiály k financování škol a školního stravování (včetně připojené metodiky 
+          financování školního stravování a materiálů k organizačním modelům – ŠPO, svazkové školy apod.).
+        </li>
+        <li>
+          Vzor vnitřní směrnice k financování a organizaci nepedagogické práce 
+          a vzor dohody mezi obcí a školou o rozdělení činností.
+        </li>
+        <li>
+          Konzultace s krajským úřadem, středním článkem podpory nebo odborníky na financování škol.
+        </li>
+        <li>
+          Jednoduché tabulky a přehledy, které obci pomohou sledovat náklady a porovnávat různé modely zajištění služeb.
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="situace-af-links">
+    <span class="situace-af-links-label">Související situace:</span>
+    <button class="situace-af-link"
+            type="button"
+            onclick="showSituacePage('situace-E'); window.scrollTo({top:0,behavior:'smooth'});">
+      Nedostatečná kapacita / přeplněné školy
+    </button>
+    <button class="situace-af-link"
+            type="button"
+            onclick="showSituacePage('situace-REJSTRIK'); window.scrollTo({top:0,behavior:'smooth'});">
+      Rejstřík škol – data pro rozhodování
+    </button>
+  </div>
+</section>
+
 <div class="accordion situace-NEP">
 <div class="acc-item open">
 <button class="acc-title">Úvod – co se mění a koho se to týká</button>
@@ -5700,38 +6134,43 @@ Podrobnější metodiky ke školnímu stravování a jeho financování najdete 
 </div>
 </div>
 <div class="acc-item">
-<button class="acc-title">Vzory dokumentů a metodické zdroje</button>
-<div class="acc-content">
-<h4>Co může mít obec připraveno</h4>
-<h4>Další metodické zdroje – doporučujeme využít</h4>
-<ul>
-<li><strong>Školská právnická osoba – přehled a výhody</strong><br/>
-<a href="/mnt/data/ŠPO - shrnutí výhod.docx" target="_blank">ŠPO – shrnutí výhod (docx)</a></li>
-<li><strong>Školská právnická osoba – podrobná metodika</strong><br/>
-<a href="/mnt/data/Skolska-pravnicka-osoba-2024.pdf" target="_blank">Školská právnická osoba 2024 (pdf)</a></li>
-<li><strong>Svazkové školy</strong><br/>
-<a href="/mnt/data/Svazkove-skoly-2024.pdf" target="_blank">Svazkové školy 2024 – metodika (pdf)</a></li>
-<li><strong>Metodika financování školního stravování</strong><br/>
-<a href="/mnt/data/METODIKA_FINANCOVANI-SKOLNIHO-STRAVOVANI-1.pdf" target="_blank">Metodika financování školního stravování (pdf)</a></li>
-<li><strong>Slučování škol – metodická příručka</strong><br/>
-<a href="/mnt/data/Slučování - příručka metodika.docx" target="_blank">Slučování škol – metodická příručka (docx)</a></li>
-<li><strong>Spojená ředitelství</strong><br/>
-<a href="/mnt/data/SPOJENÁ ŘEDITELSTVÍ_fin.docx" target="_blank">Spojená ředitelství – finální verze (docx)</a></li>
-</ul>
-<p>Tyto materiály doplňují situaci F) tím, že rozpracovávají možné organizační modely (ŠPO, svazkové školy, společné zajišťování služeb), varianty správy nepedagogické práce a doporučení pro efektivní nastavení provozních služeb.</p>
-<ul>
-<li>jednoduchou tabulku pro přehled nepedagogických pozic a nákladů ve všech školách,</li>
-<li>vzor vnitřní směrnice k financování a organizaci nepedagogické práce (kdo co platí a zajišťuje),</li>
-<li>vzor dohody mezi obcí a školou o rozdělení činností (např. kdo zajišťuje úklid, údržbu, IT, administrativu),</li>
-<li>informaci pro zaměstnance o změnách v organizaci práce a případných převodech k jinému zaměstnavateli,</li>
-<li>stručný informační materiál pro zastupitelstvo a školské rady.</li>
-</ul>
-<h4>Další metodické zdroje</h4>
-<p>
-Aktuální metodiky a právní výklady k financování nepedagogické práce a školního stravování jsou průběžně doplňovány. 
-Doporučujeme sledovat materiály MŠMT, krajských úřadů a portálu EDU.cz a v případě nejasností konzultovat konkrétní kroky s právníkem obce.
-                    </p>
-</div>
+  <button class="acc-title">Vzory dokumentů a metodické zdroje</button>
+  <div class="acc-content">
+    <h4>Co může mít obec připraveno</h4>
+    <ul>
+      <li>jednoduchou tabulku pro přehled nepedagogických pozic a nákladů ve všech školách,</li>
+      <li>vzor vnitřní směrnice k financování a organizaci nepedagogické práce (kdo co platí a zajišťuje),</li>
+      <li>vzor dohody mezi obcí a školou o rozdělení činností (např. kdo zajišťuje úklid, údržbu, IT, administrativu),</li>
+      <li>informaci pro zaměstnance o změnách v organizaci práce a případných převodech k jinému zaměstnavateli,</li>
+      <li>stručný informační materiál pro zastupitelstvo a školské rady.</li>
+    </ul>
+
+    <h4>Další metodické zdroje – doporučujeme využít</h4>
+    <ul>
+      <li><strong>Školská právnická osoba – přehled a výhody</strong><br/>
+        <a href="/mnt/data/ŠPO - shrnutí výhod.docx" target="_blank">ŠPO – shrnutí výhod (docx)</a></li>
+      <li><strong>Školská právnická osoba – podrobná metodika</strong><br/>
+        <a href="/mnt/data/Skolska-pravnicka-osoba-2024.pdf" target="_blank">Školská právnická osoba 2024 (pdf)</a></li>
+      <li><strong>Svazkové školy</strong><br/>
+        <a href="/mnt/data/Svazkove-skoly-2024.pdf" target="_blank">Svazkové školy 2024 – metodika (pdf)</a></li>
+      <li><strong>Metodika financování školního stravování</strong><br/>
+        <a href="/mnt/data/METODIKA_FINANCOVANI-SKOLNIHO-STRAVOVANI-1.pdf" target="_blank">Metodika financování školního stravování (pdf)</a></li>
+      <li><strong>Slučování škol – metodická příručka</strong><br/>
+        <a href="/mnt/data/Slučování - příručka metodika.docx" target="_blank">Slučování škol – metodická příručka (docx)</a></li>
+      <li><strong>Spojená ředitelství</strong><br/>
+        <a href="/mnt/data/SPOJENÁ ŘEDITELSTVÍ_fin.docx" target="_blank">Spojená ředitelství – finální verze (docx)</a></li>
+    </ul>
+
+    <p>
+      Tyto materiály doplňují situaci F) tím, že rozpracovávají možné organizační modely (ŠPO, svazkové školy, společné zajišťování služeb),
+      varianty správy nepedagogické práce a doporučení pro efektivní nastavení provozních služeb.
+    </p>
+
+    <p>
+      Aktuální metodiky a právní výklady k financování nepedagogické práce a školního stravování jsou průběžně doplňovány.
+      Doporučujeme sledovat materiály MŠMT, krajských úřadů a portálu EDU.cz a v případě nejasností konzultovat konkrétní kroky s právníkem obce.
+    </p>
+  </div>
 </div>
 </div>
 </div>
@@ -5742,23 +6181,21 @@ Doporučujeme sledovat materiály MŠMT, krajských úřadů a portálu EDU.cz a
 <p class="situace-tags">Týká se oblastí: Strategie a síť škol, Legislativa, povinnosti a kontroly, Komunikace a partnerství</p>
 </div>
 <div class="teaser situace-V">
-<div class="teaser-head">
-<p class="teaser-label">Stručné shrnutí</p>
-<p class="teaser-summary">
-<p>
-Krizové scénáře jako útok na školu, anonymní hrozby či jiné mimořádně rizikové situace vyžadují připravenost školy i zřizovatele. 
-Je nezbytné mít zpracované krizové plány, nacvičené postupy a jasné kontakty na složky IZS.
-</p>
-</p>
-<button class="teaser-btn">Zobrazit více</button>
-</div>
-<div class="teaser-full">
-<p>
-                    V této situaci najdete podrobný postup krok za krokem, rozdělení rolí mezi zřizovatele
-                    a ředitele školy, upozornění na časté chyby a odkazy na právní předpisy i vzorové dokumenty,
-                    které můžete využít ve své praxi.
-                </p>
-</div>
+  <div class="teaser-head">
+    <p class="teaser-label">Stručné shrnutí</p>
+    <p class="teaser-summary">
+      Krizové scénáře jako útok na školu, anonymní hrozby či jiné mimořádně rizikové situace vyžadují připravenost školy i zřizovatele.
+      Je nezbytné mít zpracované krizové plány, nacvičené postupy a jasné kontakty na složky IZS.
+    </p>
+    <button class="teaser-btn">Zobrazit více</button>
+  </div>
+  <div class="teaser-full">
+    <p>
+      V této situaci najdete podrobný postup krok za krokem, rozdělení rolí mezi zřizovatele
+      a ředitele školy, upozornění na časté chyby a odkazy na právní předpisy i vzorové dokumenty,
+      které můžete využít ve své praxi.
+    </p>
+  </div>
 </div>
 <div class="accordion situace-V">
 <div class="acc-item open">
