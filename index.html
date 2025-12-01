@@ -1,5 +1,5 @@
 <style>
-/* --- UI doplnění – abecední index a dlaždice ---  */
+/* --- UI doplnění – abecední index a dlaždice --- */
 
 .situace-index {
   display: flex;
@@ -1366,6 +1366,27 @@ document.addEventListener('DOMContentLoaded', function () {
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Majetek a finance</span>, <span class="tag-pill">Strategie a síť škol</span>, <span class="tag-pill">Zřizovatelská působnost</span></span>
 </a>
 
+<a class="tile"
+   data-category="majetek-finance zrizovatelska-pusobnost kontrolni-cinnost"
+   href="javascript:showSituacePage('situace-HCINNOST')"
+   id="situace-letter-HCINNOST">
+
+  <span class="tile-kicker">
+    H
+  </span>
+
+  <div class="tile-title">
+    Hospodářská činnost školy
+  </div>
+
+  <span class="tile-desc">
+    Jak nastavit, povolit a kontrolovat hospodářskou činnost školy (pronájmy, kurzy, stravování aj.),
+    aby byla v souladu s právními předpisy a podporovala hlavní činnost, ne ji ohrožovala.
+  </span>
+
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Majetek a finance</span>, <span class="tag-pill">Zřizovatelská působnost</span>, <span class="tag-pill">Kontrolní činnost</span></span>
+</a>
+	
 	
 <a class="tile"
    data-category="majetek-finance kvalitni-vzdelavani vzdelavaci-system"
@@ -1658,6 +1679,29 @@ document.addEventListener('DOMContentLoaded', function () {
    </span>
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Strategie a síť škol</span>, <span class="tag-pill">Komunikace a partnerství</span>, <span class="tag-pill">Kvalita vzdělávání a podpora škol</span></span>
 </a>
+	
+<a class="tile"
+   data-category="provoz-skol personalni-rizeni majetek-finance komunikace-spoluprace"
+   href="javascript:showSituacePage('situace-SDILENE')"
+   id="situace-letter-SDILENE">
+
+  <span class="tile-kicker">
+    S
+  </span>
+
+  <div class="tile-title">
+    Sdílené služby pro více škol (ekonom, IT, personalista)
+  </div>
+
+  <span class="tile-desc">
+    Jak mohou obce nebo svazky zajistit kvalitní provoz a administrativu tím,
+    že sdílí ekonomické, IT, personální či technické služby pro více škol.
+  </span>
+
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Provoz škol</span>, <span class="tag-pill">Personální řízení</span>, <span class="tag-pill">Majetek a finance</span>, <span class="tag-pill">Spolupráce zřizovatelů</span></span>
+</a>
+	
+	
 <a <a="" class="tile" data-category="komunikace-spoluprace kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-T')" id="situace-letter-S">
 <span class="tile-kicker">
     S
@@ -1735,6 +1779,7 @@ document.addEventListener('DOMContentLoaded', function () {
   </span>
 	<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Majetek a finance</span>, <span class="tag-pill">Legislativa</span>, <span class="tag-pill">Provoz škol</span>, <span class="tag-pill">Bezpečnost</span></span>
 </a>
+
 	
 	
 <!-- Dlaždice: Rejstřík škol a školských zařízení -->
@@ -1762,6 +1807,29 @@ document.addEventListener('DOMContentLoaded', function () {
    </span>
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Legislativa</span>, <span class="tag-pill">povinnosti a kontroly</span>, <span class="tag-pill">Data a analýzy</span>, <span class="tag-pill">Strategie a síť škol</span></span>
 </a>
+	
+<a class="tile"
+   data-category="provoz-skol personalni-rizeni majetek-finance zrizovatelska-pusobnost"
+   href="javascript:showSituacePage('situace-NEPEDPROVOZ')"
+   id="situace-letter-NEPEDPROVOZ">
+
+  <span class="tile-kicker">
+    N
+  </span>
+
+  <div class="tile-title">
+    Zajišťování nepedagogických činností školy
+  </div>
+
+  <span class="tile-desc">
+    Jak zřizovatel a ředitel nastavují zajištění úklidu, provozu, správy budov, administrativy či IT,
+    aby škola fungovala efektivně a v jasně rozdělených rolích.
+  </span>
+
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Provoz škol</span>, <span class="tag-pill">Personální řízení</span>, <span class="tag-pill">Majetek a finance</span>, <span class="tag-pill">Zřizovatelská působnost</span></span>
+</a>
+	
+	
 <a class="tile" data-category="kontrolni-cinnost kvalitni-vzdelavani" href="javascript:showSituacePage('situace-I')" id="situace-letter-Z">
 <span class="tile-kicker">
     Z
@@ -1846,6 +1914,268 @@ document.addEventListener('DOMContentLoaded', function () {
    </button>
 </div>
 </div> <!-- ← KONEC #situace-overview -->
+	
+<div class="page situace-page" id="situace-HCINNOST" style="display:none;">
+
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>H) Hospodářská činnost školy</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Finance a majetek, Zřizovatelská působnost, Kontrolní činnost, Provoz škol
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-HCINNOST">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Škola může vedle hlavní činnosti vykonávat i hospodářskou činnost – například pronájem tělocvičny,
+        jazykové kurzy nebo doplňkové služby. Zřizovatel musí nastavit jasná pravidla, schválit okruhy
+        hospodářské činnosti a průběžně kontrolovat, zda neohrožuje hlavní činnost školy.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+
+    <div class="teaser-full">
+      <p>
+        Hospodářská činnost může škole přinášet užitečné příjmy a pomoci lépe využít majetek.
+        Zároveň ale nese rizika – právní, finanční i reputační. Proto je potřeba, aby zřizovatel
+        jasně vymezil, jaké činnosti jsou povoleny, jak se budou vykazovat a jak se s příjmy naloží.
+      </p>
+      <p>
+        Tato situace shrnuje základní principy, doporučený postup a nejčastější rizika,
+        se kterými se zřizovatel setkává.
+      </p>
+    </div>
+  </div>
+
+  <!-- A–F struktura -->
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+
+    <p class="situace-af-intro">
+      Hospodářská činnost školy by měla být „přidružená“, nikoli hlavní. A–F kroky ukazují,
+      jak nastavit rámec, proces schvalování a kontrolu, aby byla v souladu s posláním školy
+      i pravidly hospodaření příspěvkových organizací.
+    </p>
+
+    <nav class="situace-af-tabs" aria-label="Sekce A–F">
+      <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Hospodářská činnost školy zahrnuje činnosti nad rámec hlavního poslání (vzdělávání),
+          které jsou přípustné a mohou škole i zřizovateli přinášet užitek – například pronájmy prostor,
+          kurzy pro veřejnost, doplňkové služby.
+        </p>
+        <p>
+          Zřizovatel musí dbát na to, aby tato činnost:
+          nenarušovala hlavní činnost školy,
+          byla v souladu s právními předpisy,
+          byla transparentně vykazována a kontrolována.
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>Vymezit ve zřizovací listině okruh činností, které může škola vykonávat.</li>
+          <li>Schvalovat hospodářskou činnost školy v souladu s právní úpravou příspěvkových organizací.</li>
+          <li>Kontrolovat, zda hospodářská činnost nenarušuje hlavní činnost školy.</li>
+          <li>Dohlížet na to, aby hospodářská činnost byla řádně evidována a vykazována v účetnictví.</li>
+          <li>Rozhodovat o využití výnosů z hospodářské činnosti (v rámci pravomocí zřizovatele).</li>
+        </ul>
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>Mít jednoduchá vnitřní pravidla pro hospodářskou činnost škol v obci / svazku.</li>
+          <li>Vymezit, jaké typy činností jsou žádoucí a jaké naopak ne (vazba na poslání školy).</li>
+          <li>Stanovit principy pro tvorbu cen za pronájem prostor a poskytované služby.</li>
+          <li>Transparentně informovat o příjmech a jejich využití (např. výroční zpráva školy).</li>
+          <li>Pravidelně vyhodnocovat, zda se hospodářská činnost škole a obci vyplácí – finančně i věcně.</li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Zmapujte současnou hospodářskou činnost školy.</strong><br/>
+            Jaké činnosti škola vykonává? Jaké má z nich příjmy a výdaje? Jsou formálně schválené?
+          </li>
+          <li>
+            <strong>Ověřte soulad se zřizovací listinou a vnitřními pravidly.</strong><br/>
+            Jsou všechny činnosti povolené? Neměly by se formálně doplnit / upravit?
+          </li>
+          <li>
+            <strong>Nastavte společně rámec do budoucna.</strong><br/>
+            Co škola může a co ne? Jak bude žádat o souhlas s novou činností?
+          </li>
+          <li>
+            <strong>Domluvte se na pravidelném vykazování a kontrole.</strong><br/>
+            Např. 1× ročně přehled hospodářské činnosti včetně využití výnosů.
+          </li>
+          <li>
+            <strong>Propojte hospodářskou činnost s plánem rozvoje školy.</strong><br/>
+            Využít příjmy na vybavení, pomůcky, aktivity pro žáky – podle dohody se zřizovatelem.
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>Hospodářská činnost nesmí převážit nad hlavní činností školy.</li>
+          <li>Nejasná pravidla pro využití výnosů – riziko sporů a nedůvěry.</li>
+          <li>Činnosti, které nejsou v souladu s posláním školy nebo zřizovací listinou.</li>
+          <li>Netransparentní pronájmy (např. „kamarádské“ ceny, bez smluv).</li>
+          <li>Nedostatečné účetní oddělení hlavní a hospodářské činnosti.</li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>Metodiky k hospodaření příspěvkových organizací (kraje, MŠMT).</li>
+          <li>Vnitřní směrnice obce k hospodářské činnosti PO a pronájmu majetku.</li>
+          <li>
+            Související situace –
+            <em>Nakládání s majetkem školy</em>,
+            <em>Evidence majetku školy</em>,
+            <em>Schvalování účetní závěrky a výsledku hospodaření</em>.
+          </li>
+          <li>Možnost konzultace s ekonomem obce, účetním školy nebo krajským metodikem.</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-MAJ'); window.scrollTo({top:0,behavior:'smooth'});">
+        Nakládání s majetkem školy
+      </button>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-EVIDENCE'); window.scrollTo({top:0,behavior:'smooth'});">
+        Evidence majetku školy
+      </button>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-UZAVERKA'); window.scrollTo({top:0,behavior:'smooth'});">
+        Schvalování účetní závěrky a VH
+      </button>
+    </div>
+  </section>
+
+  <!-- Akordeon -->
+  <div class="accordion situace-HCINNOST">
+
+    <div class="acc-item open">
+      <button class="acc-title">Co je hospodářská činnost školy</button>
+      <div class="acc-content">
+        <p>
+          Hospodářská činnost je doplňková činnost příspěvkové organizace, která:
+        </p>
+        <ul>
+          <li>nenarušuje hlavní činnost školy,</li>
+          <li>využívá volné kapacity majetku nebo personálu,</li>
+          <li>je v souladu se zřizovací listinou a právními předpisy,</li>
+          <li>má řádně vedené účetnictví a oddělené sledování.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Typické formy hospodářské činnosti</button>
+      <div class="acc-content">
+        <ul>
+          <li>pronájem tělocvičny, hřiště nebo učeben místním spolkům,</li>
+          <li>pořádání kurzů a kroužků pro veřejnost,</li>
+          <li>prodej stravy cizím strávníkům (dle pravidel),</li>
+          <li>další služby, které jsou v souladu s posláním školy a zřizovací listinou.</li>
+        </ul>
+        <p>
+          Vždy je potřeba posoudit, zda je činnost vhodná pro prostředí školy a její image.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Role zřizovatele a ředitele školy</button>
+      <div class="acc-content">
+        <p><strong>Zřizovatel</strong>:</p>
+        <ul>
+          <li>vymezuje rámec hospodářské činnosti (zřizovací listina, směrnice),</li>
+          <li>schvaluje základní okruhy činností,</li>
+          <li>kontroluje hospodaření a využití výnosů.</li>
+        </ul>
+        <p><strong>Ředitel školy</strong>:</p>
+        <ul>
+          <li>organizuje konkrétní činnosti,</li>
+          <li>zajišťuje smlouvy, provoz a účetní evidenci,</li>
+          <li>připravuje podklady pro zřizovatele (přehled činností, výsledky).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Rizika a časté chyby</button>
+      <div class="acc-content">
+        <ul>
+          <li>„šedá zóna“ činností bez jasného schválení,</li>
+          <li>zneužívání majetku školy pro soukromé aktivity bez kontroly,</li>
+          <li>činnosti, které zatěžují zaměstnance a nemají přiměřený přínos,</li>
+          <li>nejasné nebo nevýhodné smlouvy s nájemci,</li>
+          <li>nedostatečné oddělení nákladů a výnosů hospodářské činnosti.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Související situace a dokumenty</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-MAJ')">Nakládání s majetkem školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-EVIDENCE')">Evidence majetku školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-UZAVERKA')">Schvalování účetní závěrky a výsledku hospodaření</a></li>
+          <li>Vnitřní směrnice obce k hospodářské činnosti příspěvkových organizací</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+	
+	
+	
 	<!-- I) ICT vybavení školy – strategie, bezpečnost a podpora učitelů -->
 <div class="page situace-page" id="situace-ICT" style="display:none;">
 
@@ -2892,6 +3222,7 @@ a technického stavu budov.
 <li>sloučení škol, vznik svazkové školy nebo převod školy na jiného zřizovatele,</li>
 <li>změna formy organizace (např. přechod na školskou právnickou osobu),</li>
 <li>významná změna v majetku nebo v podmínkách hospodaření.</li>
+
 </ul>
 <p>
           Po každé takové změně je potřeba zkontrolovat soulad mezi zřizovací listinou,
@@ -4580,6 +4911,290 @@ a technického stavu budov.
 </div>
 </div>
 </div>
+
+<div class="page situace-page" id="situace-NEPEDPROVOZ" style="display:none;">
+
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>Z) Zajišťování nepedagogických činností školy</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Provoz škol, Personální řízení, Finance a majetek, Zřizovatelská působnost
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-NEPEDPROVOZ">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Nejen učitelé, ale i provozní a administrativní zázemí rozhoduje o tom,
+        jak škola funguje. Zřizovatel musí zajistit, aby byly nepedagogické činnosti
+        (úklid, školník, administrativa, IT, jídelna…) nastaveny efektivně, s jasnými
+        kompetencemi a v návaznosti na financování.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+    <div class="teaser-full">
+      <p>
+        Neexistuje jeden univerzální model – nepedagogické činnosti mohou vykonávat
+        zaměstnanci školy, zaměstnanci obce, společné služby pro více škol nebo externí dodavatelé.
+        Důležité je, aby role a odpovědnosti byly srozumitelně rozdělené, výkon činností
+        byl kvalitní a ředitel školy měl reálnou možnost provoz ovlivňovat.
+      </p>
+      <p>
+        Tato situace pomáhá zřizovateli a řediteli nastavit systém, který propojí
+        provozní potřeby školy, personální možnosti a rozpočet obce.
+      </p>
+    </div>
+  </div>
+
+  <!-- A–F struktura -->
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+    <p class="situace-af-intro">
+      Zajištění nepedagogických činností je kombinací personálního, provozního a finančního rozhodování.
+      A–F kroky ukazují, jak si nejdříve udělat přehled, potom nastavit model a průběžně ho vyhodnocovat.
+    </p>
+
+    <nav class="situace-af-tabs" aria-label="Sekce A–F">
+      <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Ne pedagožky a ne pedagožci – školník, uklízečky, hospodářka, mzdová a personální agenda,
+          administrativní podpora, IT, provoz jídelny – tvoří zázemí, bez kterého škola nedokáže
+          bezpečně a plynule fungovat.
+        </p>
+        <p>
+          Rozhodnutí, kdo tyto činnosti vykonává (škola, obec, sdílené služby, externí dodavatelé)
+          a jak jsou financovány, je klíčovou součástí role zřizovatele. Cílem je kombinace
+          kvality, efektivity a jasných kompetencí.
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>Zajistit, aby škola měla zajištěný bezpečný a provozuschopný chod budovy a areálu.</li>
+          <li>Dbát na splnění povinností v oblasti BOZP, hygieny, požární ochrany a dalších předpisů.</li>
+          <li>Vymezit, jaké nepedagogické činnosti škola vykonává a jaké zajišťuje obec nebo jiný subjekt.</li>
+          <li>Nastavit pracovní poměry a smlouvy tak, aby odpovídaly vykonávané práci a odpovědnosti.</li>
+          <li>Zohlednit nepedagogické činnosti v rozpočtu obce a ve vztahu ke škole.</li>
+        </ul>
+
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>Vytvořit přehled všech nepedagogických činností školy a kdo je vykonává.</li>
+          <li>Společně s ředitelem zhodnotit, co funguje dobře a kde jsou slabiny (kapacity, kvalita, kompetence).</li>
+          <li>Ujasnit si, které činnosti je vhodné mít „in-house“ a které lze sdílet nebo outsourcovat.</li>
+          <li>Pro klíčové role (školník, hospodářka, IT) definovat očekávání a spolupráci s ředitelem školy.</li>
+          <li>Průběžně vyhodnocovat, zda zvolený model odpovídá vývoji financování a potřeb školy.</li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Zmapujte současný stav.</strong><br/>
+            Kdo dělá úklid, údržbu, administrativu, mzdové a účetní služby, IT, jídelnu?
+            Jsou to zaměstnanci školy, obce, firmy?
+          </li>
+          <li>
+            <strong>Vyhodnoťte potřeby školy.</strong><br/>
+            Zda má škola dostatečnou podporu (čas, kompetence, vybavení), kde ředitel „hoří“ na provozních tématech.
+          </li>
+          <li>
+            <strong>Rozhodněte o modelu zajištění.</strong><br/>
+            Zachovat současný stav, doplnit kapacity, sdílet pracovníky pro více škol, část činností externalizovat.
+          </li>
+          <li>
+            <strong>Upravte pracovní náplně a smluvní vztahy.</strong><br/>
+            Jasně popsat, co se od jednotlivých rolí očekává a komu jsou podřízeny.
+          </li>
+          <li>
+            <strong>Propojte model s rozpočtem.</strong><br/>
+            Odhad nákladů, případné úspory, dopady na rozpočet obce i školy.
+          </li>
+          <li>
+            <strong>Pravidelně model vyhodnocujte.</strong><br/>
+            Jednou ročně se s ředitelem vrátit k otázce: funguje to? Potřebujeme něco změnit?
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>Nejasné kompetence – například kdo zadává práci školníkovi a kdo ji hodnotí.</li>
+          <li>Přetížení ředitele provozními úkoly na úkor řízení pedagogiky.</li>
+          <li>Rozdílné podmínky pro školy v jedné obci bez jasného důvodu.</li>
+          <li>Podcenění IT podpory – „když se to rozbije, tak to nějak spravíme“.</li>
+          <li>Výběr externích dodavatelů bez kontroly kvality a bez zpětné vazby od školy.</li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>Metodické materiály k financování nepedagogických činností a provozu škol.</li>
+          <li>Střední článek podpory a krajské odbory školství – sdílení modelů z jiných obcí.</li>
+          <li>
+            Související situace –
+            <em>Financování nepedagogické práce po roce 2026</em>,
+            <em>Nakládání s majetkem školy</em>,
+            <em>Dlouhodobý plán oprav a údržby</em>.
+          </li>
+          <li>Možnost společných služeb pro více škol (svazky obcí, školské právnické osoby, sdílené pozice).</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-NEP'); window.scrollTo({top:0,behavior:'smooth'});">
+        Financování nepedagogické práce po roce 2026
+      </button>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-MAJ'); window.scrollTo({top:0,behavior:'smooth'});">
+        Nakládání s majetkem školy
+      </button>
+
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-UDRZBA'); window.scrollTo({top:0,behavior:'smooth'});">
+        Dlouhodobý plán oprav a údržby
+      </button>
+    </div>
+  </section>
+
+  <!-- Akordeon – detailní obsah -->
+  <div class="accordion situace-NEPEDPROVOZ">
+
+    <div class="acc-item open">
+      <button class="acc-title">Jaké nepedagogické činnosti škola potřebuje</button>
+      <div class="acc-content">
+        <p>Typický přehled činností:</p>
+        <ul>
+          <li>úklid, správa budovy, školník, drobné opravy,</li>
+          <li>administrativa a hospodářská agenda,</li>
+          <li>mzdová a personální agenda,</li>
+          <li>IT podpora (technika, sítě, software),</li>
+          <li>provoz školní jídelny,</li>
+          <li>bezpečnost, revize, komunikace s dodavateli.</li>
+        </ul>
+        <p>
+          Každá škola má jiné podmínky, důležitý je ale kompletní seznam, ne jen „to, co momentálně hoří“.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Možné modely zajištění nepedagogických činností</button>
+      <div class="acc-content">
+        <p>V praxi se objevují různé modely:</p>
+        <ul>
+          <li>zaměstnanci školy (podřízeni řediteli),</li>
+          <li>zaměstnanci obce (podřízeni starostovi / OÚ, ale pracují ve škole),</li>
+          <li>sdílené služby pro více škol (např. společný IT technik, ekonom),</li>
+          <li>externí dodavatelé (úklid, IT, správa budovy, stravování).</li>
+        </ul>
+        <p>
+          Zřizovatel může volit kombinaci modelů – důležité je, aby to z pohledu školy dávalo smysl.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Nastavení rolí a kompetencí</button>
+      <div class="acc-content">
+        <p>Klíčové otázky, které je dobré si vyjasnit:</p>
+        <ul>
+          <li>Kdo zadává práci provozním zaměstnancům a kdo je hodnotí?</li>
+          <li>Jak ředitel školy zadává požadavky na obec nebo externí firmu?</li>
+          <li>Kdo rozhoduje o prioritách (co dřív, co později)?</li>
+          <li>Jak se řeší nespokojenost se službou (např. kvalita úklidu)?</li>
+        </ul>
+        <p>
+          Odpovědi je vhodné mít zaznamenané – třeba ve vnitřních pravidlech
+          nebo dohodě mezi školou a zřizovatelem.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Spolupráce ředitele školy a zřizovatele</button>
+      <div class="acc-content">
+        <p>
+          Ředitel školy vidí každodenní provoz, zřizovatel má rozpočtovou a majetkovou odpovědnost.
+          Dobrá praxe:
+        </p>
+        <ul>
+          <li>pravidelné schůzky k provozním tématům,</li>
+          <li>společné plánování oprav a větších zásahů,</li>
+          <li>jasný kanál pro hlášení závad a provozních problémů,</li>
+          <li>společné vyhodnocení toho, zda model podpory škole stačí.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Rizika a časté chyby</button>
+      <div class="acc-content">
+        <ul>
+          <li>nejasné podřízení nepedagogických zaměstnanců,</li>
+          <li>přetížení ředitele nebo naopak jeho „odříznutí“ od provozu,</li>
+          <li>roztříštěnost služeb – každý dělá něco, ale nikdo nemá celkový přehled,</li>
+          <li>podcenění kvality úklidu, údržby nebo IT – dokud se nestane problém,</li>
+          <li>absence pravidelného vyhodnocování nákladů a přínosů jednotlivých modelů.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Související situace a dokumenty</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-NEP')">Financování nepedagogické práce po roce 2026</a></li>
+          <li><a href="javascript:showSituacePage('situace-MAJ')">Nakládání s majetkem školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-UDRZBA')">Dlouhodobý plán oprav a údržby</a></li>
+          <li><a href="javascript:showSituacePage('situace-FIN')">Financování a provozní rozpočet školy</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- I) Zákonné povinnosti a kontroly -->
 <div class="page situace-page" id="situace-I" style="display:none;">
 <a class="back" href="javascript:showSituacePage('')">← Zpět na přehled situací a jejich řešení</a>
@@ -7148,6 +7763,7 @@ Závažné projevy problémového chování žáků (agrese, šikana, ničení m
 <li>program schůze připravený ředitelem ve spolupráci s předsedou rady,</li>
 <li>zveřejňované zápisy a usnesení,</li>
 <li>jasná pravidla hlasování a přijímání usnesení,</li>
+
 <li>možnost zapojení rady do projektů školy (návrhy, konzultace).</li>
 </ul>
 <p>
@@ -7443,6 +8059,261 @@ Je nutné mít jasně rozdělené odpovědnosti, zpracovatelské smlouvy a inter
 </div>
 </div>
 </div>
+
+<div class="page situace-page" id="situace-SDILENE" style="display:none;">
+
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>S) Sdílené služby pro více škol (ekonom, IT, personalista)</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Provoz škol, Personální řízení, Finance a majetek, Komunikace a spolupráce
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-SDILENE">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Sdílené služby pomáhají školám i obci zvládat administrativu, IT podporu,
+        ekonomiku či údržbu efektivněji, levněji a kvalitněji. Model je vhodný zejména
+        tam, kde jednotlivé školy nemají kapacitu na vlastní specializované pracovníky.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+    <div class="teaser-full">
+      <p>
+        Sdílený ekonom, personalista, IT technik nebo technik údržby se může stát zásadní podporou
+        pro více škol současně. Model zvyšuje kvalitu služeb, snižuje duplicity, profesionalizuje provoz
+        a umožňuje ředitelům více se věnovat pedagogickému vedení školy. Je ale nutné mít jasné
+        rozdělení rolí, pravidla komunikace a systém vyhodnocování kvality této služby.
+      </p>
+    </div>
+  </div>
+
+  <!-- A-F sekce -->
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+    <p class="situace-af-intro">
+      Sdílení služeb mezi školami je v ČR stále běžnější. Přináší úspory i vyšší kvalitu,
+      pokud je dobře nastavené. Model A–F ukazuje, jaké povinnosti má zřizovatel,
+      co je dobrá praxe a jak nastavit sdílené služby tak, aby byly přínosem pro všechny školy.
+    </p>
+
+    <nav class="situace-af-tabs">
+      <button class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Některé služby škola sama neutáhne – zejména ekonomiku, personalistiku,
+          ICT, účetnictví, projektové řízení nebo technickou správu. Sdílené služby umožňují,
+          aby jeden odborník pracoval pro více škol najednou, což snižuje náklady a zvyšuje profesionalitu.
+        </p>
+        <p>
+          Model může fungovat pod obcí, svazkem obcí, příspěvkovou organizací, školskou právnickou osobou,
+          nebo jako externí služba.
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>Zajistit, aby školy měly dostupnou odbornou podporu v ekonomických a provozních agendách.</li>
+          <li>Dodržet pracovněprávní předpisy a jasně definovat smluvní vztahy, pokud je služba poskytována externě.</li>
+          <li>Vymezit odpovědnosti – kdo rozhoduje, kdo nese odpovědnost za chyby a kdo schvaluje výstupy.</li>
+          <li>Zohlednit náklady na sdílené služby v rozpočtu obce nebo služebního subjektu.</li>
+          <li>Respektovat pravidla ochrany osobních údajů (GDPR) a bezpečnosti IT.</li>
+        </ul>
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>Vypracovat analýzu – kolik práce potřebují jednotlivé školy a jaký model sdílení je nejvhodnější.</li>
+          <li>Začít pilotním obdobím (např. 6–12 měsíců) a teprve poté model stabilizovat.</li>
+          <li>Nastavit jasná SLA – popisy služeb, reakční lhůty, výstupy a standardy kvality.</li>
+          <li>Pravidelně sbírat od ředitelů zpětnou vazbu na kvalitu služby.</li>
+          <li>Využívat sdílené specialisty i pro rozvoj – projektové žádosti, dotační management, energetiku.</li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Zmapujte potřeby všech škol.</strong><br/>
+            IT podpora? Ekonomická agenda? Personalistika? Účetnictví? Údržba?
+          </li>
+          <li>
+            <strong>Vyhodnoťte kapacity obce.</strong><br/>
+            Má obec vlastní ekonomku? IT technika? Je možné služby sdílet napříč odbory?
+          </li>
+          <li>
+            <strong>Zvolte model sdílení.</strong><br/>
+            Zaměstnanec obce, zaměstnanec školy s rozšířenou působností, svazek obcí, externí firma.
+          </li>
+          <li>
+            <strong>Nastavte pravidla spolupráce.</strong><br/>
+            Popis služeb, reakční doby, odpovědnosti, způsob komunikace a reporting.
+          </li>
+          <li>
+            <strong>Uzavřete smlouvy nebo dodatky.</strong><br/>
+            Pracovní náplně, DPP/DPČ, smlouvy o poskytování služeb, ochrana dat.
+          </li>
+          <li>
+            <strong>Vyhodnocujte.</strong><br/>
+            Jednou až dvakrát ročně zhodnoťte spokojenost škol a efektivitu modelu.
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>Pokud je sdílená služba přetížená, trpí kvalita výstupů všech škol.</li>
+          <li>Nedostatečná komunikace – ředitelé musí vědět, co mohou očekávat a kdy.</li>
+          <li>Nejasné hranice odpovědností (ekonom vs. ředitel vs. obec).</li>
+          <li>Přílišná centralizace bez prostoru pro řešení specifik jednotlivých škol.</li>
+          <li>Rizika GDPR a kyberbezpečnosti u sdíleného IT.</li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>Střední článek podpory – příklady dobré praxe sdílení ekonomů, IT, personalistů.</li>
+          <li>Svazky obcí – modely společných služeb.</li>
+          <li>
+            Související situace:
+            <em>Zajišťování nepedagogických činností školy</em>,
+            <em>Financování a provozní rozpočet školy</em>,
+            <em>Nakládání s majetkem školy</em>.
+          </li>
+          <li>Nástroje pro projektové řízení a sdílený servis – komerční i open-source.</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+
+      <button class="situace-af-link"
+              onclick="showSituacePage('situace-NEPEDPROVOZ'); window.scrollTo({top:0,behavior:'smooth'});">
+        Zajišťování nepedagogických činností školy
+      </button>
+
+      <button class="situace-af-link"
+              onclick="showSituacePage('situace-FIN'); window.scrollTo({top:0,behavior:'smooth'});">
+        Provozní rozpočet školy
+      </button>
+
+      <button class="situace-af-link"
+              onclick="showSituacePage('situace-ICT'); window.scrollTo({top:0,behavior:'smooth'});">
+        ICT vybavení a správa IT
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- Akordeon -->
+  <div class="accordion situace-SDILENE">
+
+    <div class="acc-item open">
+      <button class="acc-title">Které služby lze sdílet mezi školami</button>
+      <div class="acc-content">
+        <ul>
+          <li>ekonomická agenda (rozpočty, účetnictví, rozbory),</li>
+          <li>personalistika a mzdová agenda,</li>
+          <li>projektové řízení a dotační agenda,</li>
+          <li>IT podpora – technik, správa sítí, kyberbezpečnost,</li>
+          <li>údržba a správa budov (technik pro více škol),</li>
+          <li>facility management nebo energetika.</li>
+        </ul>
+        <p>Čím specializovanější agenda, tím větší přínos má sdílení.</p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Modely sdílení služeb</button>
+      <div class="acc-content">
+        <p>V české praxi se vyskytují zejména:</p>
+        <ul>
+          <li><strong>zaměstnanec obce</strong> pracující pro více škol,</li>
+          <li><strong>zaměstnanec jedné školy</strong> poskytující službu i ostatním (na úvazek/dohodu),</li>
+          <li><strong>společné služby</strong> ve svazku obcí nebo „mikroregionu“,</li>
+          <li><strong>externí poskytovatel</strong> (IT, účetnictví, projektový management).</li>
+        </ul>
+        <p>
+          Výběr modelu závisí na velikosti obce, počtu škol a odbornosti, kterou škola potřebuje.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Jak řídit kvalitu sdílené služby</button>
+      <div class="acc-content">
+        <ul>
+          <li>stanovit očekávání (SLA), pravidelné výstupy a reakční lhůty,</li>
+          <li>školy mají možnost hodnotit kvalitu služby 1–2× ročně,</li>
+          <li>zřizovatel sleduje vytížení pracovníků a dostupnost služby,</li>
+          <li>nastavit jasnou koordinaci – kdo zadává, kdo kontroluje, kdo potvrzuje výstupy.</li>
+        </ul>
+        <p>
+          Bez řízení kvality se sdílení snadno stane „úsporou na papíře“, ale ne v realitě.
+        </p>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Rizika a časté chyby</button>
+      <div class="acc-content">
+        <ul>
+          <li>příliš velké množství škol na jednoho pracovníka,</li>
+          <li>nejasná odpovědnost – kdo má právo zadávat úkoly, kdo je schvaluje,</li>
+          <li>zpoždění ve službách (IT, ekonomika), které brzdí chod školy,</li>
+          <li>podcenění kyberbezpečnosti při sdílené IT podpoře,</li>
+          <li>nekoordinované investice škol, pokud není centrální přehled.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-title">Související dokumenty a metodiky</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-NEPEDPROVOZ')">Zajišťování nepedagogických činností školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-ICT')">ICT podpora a vybavení školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-FIN')">Financování a provozní rozpočet školy</a></li>
+          <li>Modely sdílených služeb – příklady z krajů a středního článku podpory.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="page situace-page" id="situace-UZAVERKA" style="display:none;">
 
