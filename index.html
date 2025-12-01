@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<title>EDU.cz – Zřizovatel (prototyp)</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
 /* --- UI doplnění – abecední index a dlaždice --- */
 
@@ -1254,6 +1261,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Finance a majetek</span>, <span class="tag-pill">Provoz škol</span> <span class="tag-pill">Strategické plánování</span></span>
 </a>
+
+<a class="tile"
+   data-category="komunikace-spoluprace participace komunitni-rozvoj"
+   href="javascript:showSituacePage('situace-DETI')"
+   id="situace-letter-DETI">
+  <span class="tile-kicker">
+    A
+  </span>
+  <div class="tile-title">
+    Aktivní zapojování dětí a mládeže do dění obce
+  </div>
+  <span class="tile-desc">
+    Jak může zřizovatel podporovat participaci dětí a mladých lidí – přes žákovské parlamenty,
+    dětská fóra, projekty, komunitní akce i participativní rozpočet.
+  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span>, 
+  <span class="tag-pill">Komunikace a spolupráce</span>, 
+  <span class="tag-pill">Participace</span>, 
+  <span class="tag-pill">Komunitní rozvoj</span>, 
+  <span class="tag-pill">Podpora žáků</span>, 
+  <span class="tag-pill">Zřizovatelská působnost</span></span>
+</a>	
 	
 <a class="tile"
    data-category="provoz-skol kontrolni-cinnost komunikace-spoluprace personalni-rizeni"
@@ -1732,6 +1761,29 @@ document.addEventListener('DOMContentLoaded', function () {
   </span>
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Ředitel školy</span>, <span class="tag-pill">Odměňování</span>, <span class="tag-pill">Zřizovatel</span>, <span class="tag-pill">Hospodaření</span>, <span class="tag-pill">Kvalita školy</span></span>
 </a>
+	
+<a class="tile"
+   data-category="komunikace-spoluprace strategicke-planovani rizeni-skol"
+   href="javascript:showSituacePage('situace-SPOLRED')"
+   id="situace-letter-SPOLRED">
+  <span class="tile-kicker">
+    S
+  </span>
+  <div class="tile-title">
+    Podpora spolupráce ředitelů škol
+  </div>
+  <span class="tile-desc">
+    Jak může zřizovatel podporovat spolupráci ředitelů – od pravidelných setkání
+    po sdílení praxe, společné projekty a rozvoj jednotného přístupu v území.
+  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span>, 
+  <span class="tag-pill">Komunikace a spolupráce</span>, 
+  <span class="tag-pill">Řízení škol</span>, 
+  <span class="tag-pill">Strategické plánování</span>, 
+  <span class="tag-pill">Profesní rozvoj</span>, 
+  <span class="tag-pill">Zřizovatelská působnost</span></span>
+</a>	
+	
 <a class="tile" data-category="kvalitni-vzdelavani personalni-rizeni" href="javascript:showSituacePage('situace-U')" id="situace-letter-P">
 <span class="tile-kicker">
     P
@@ -1910,7 +1962,31 @@ document.addEventListener('DOMContentLoaded', function () {
     Jak zřizovatel podporuje inkluzi, sociálně znevýhodněné a cizince.
    </span>
 <span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span> <span class="tag-pill">Kvalita vzdělávání a podpora škol</span>, <span class="tag-pill">Strategie a síť škol</span>, <span class="tag-pill">Komunikace a partnerství</span></span>
-</a><a class="tile" data-category="kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-SP')" id="situace-letter-S">
+</a>
+	
+<a class="tile"
+   data-category="komunikace-spoluprace kontrolni-cinnost rizeni-skol"
+   href="javascript:showSituacePage('situace-STIZ')"
+   id="situace-letter-STIZ">
+  <span class="tile-kicker">
+    S
+  </span>
+  <div class="tile-title">
+    Stížnosti a podněty ve vztahu ke škole
+  </div>
+  <span class="tile-desc">
+    Jak má zřizovatel nastavit přijímání a vyřizování stížností a podnětů ke škole tak,
+    aby byl proces předvídatelný, férový a chránil jak školu, tak rodiče, žáky a veřejnost.
+  </span>
+<span class="tile-tags"><span class="tile-tags-label">Týká se oblastí:</span>, 
+  <span class="tag-pill">Komunikace a spolupráce</span>, 
+  <span class="tag-pill">Kontrolní činnost</span>, 
+  <span class="tag-pill">Řízení škol</span>, 
+  <span class="tag-pill">Participace</span>, 
+  <span class="tag-pill">Zřizovatelská působnost</span></span>
+</a>	
+		
+	<a class="tile" data-category="kvalitni-vzdelavani vzdelavaci-system" href="javascript:showSituacePage('situace-SP')" id="situace-letter-S">
 <span class="tile-kicker">
     S
    </span>
@@ -3109,6 +3185,340 @@ Každá úroveň má jasně stanovené kompetence.
 </div>
 </div>
 </div>
+	
+<!-- S) Stížnosti a podněty ve vztahu ke škole -->
+<div class="page situace-page" id="situace-STIZ" style="display:none;">
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>S) Stížnosti a podněty ve vztahu ke škole</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Komunikace a spolupráce, Kontrolní činnost, Řízení škol,
+      Participace, Zřizovatelská působnost
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-STIZ">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Stížnosti a podněty rodičů, žáků nebo zaměstnanců míří často na zřizovatele jako „někoho nad školou“.
+        Aby se situace řešily věcně a spravedlivě, potřebuje obec jasný a předem popsaný postup – jak se stížnost
+        přijímá, kdo ji posuzuje, jak se zapojuje škola a jak se informuje stěžovatel. Dobře nastavený proces
+        chrání všechny zúčastněné a pomáhá předcházet eskalaci konfliktů.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+    <div class="teaser-full">
+      <p>
+        Na zřizovatele se mohou obracet rodiče, žáci, zaměstnanci školy i další lidé z obce – s kritikou chování
+        učitele, ředitele, s výhradami k organizaci výuky, provozu školy, stravování nebo s návrhy na změnu.
+        Pokud zřizovatel nemá jasná pravidla, vzniká dojem, že se stížnosti „zametají pod koberec“,
+        nebo naopak, že se rozhoduje živelně a nespravedlivě.
+      </p>
+      <p>
+        Smyslem je mít přehledný, dostupný a férový postup: jak se stížnost přijímá, kdy se obrátit nejprve na školu,
+        kdy vstupuje do řešení zřizovatel, jak se zajišťuje nestrannost a jak se předchází zbytečnému zasahování
+        do každodenní práce školy. Součástí je i práce s méně formálními podněty – aby se problémy daly řešit včas
+        a nemusely přerůstat v otevřené konflikty.
+      </p>
+    </div>
+  </div>
+
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+    <p class="situace-af-intro">
+      Stížnosti a podněty jsou citlivé téma, dotýkají se dětí, rodičů i zaměstnanců školy.
+      A–F přehled popisuje, jak si zřizovatel může nastavit jasný, předvídatelný a spravedlivý postup,
+      který chrání školu i veřejnost a podporuje kulturu otevřené komunikace.
+    </p>
+
+    <nav class="situace-af-tabs" aria-label="Sekce A–F">
+      <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Stížnosti a podněty jsou běžnou součástí života školy. Mohou upozornit na skutečné problémy,
+          ale také být důsledkem nedorozumění nebo emocí. Zřizovatel proto potřebuje jasná pravidla,
+          jak s nimi pracovat – kdy nasměrovat stěžovatele nejprve na vedení školy a kdy vstoupit aktivně do řešení.
+        </p>
+        <p>
+          Dobře nastavený systém přijímání a vyřizování stížností pomáhá udržet důvěru veřejnosti,
+          chránit zaměstnance školy, podporovat ředitele v jejich roli a zároveň neignorovat legitimní obavy rodičů
+          nebo žáků. Důležité je rozlišovat mezi podnětem ke zlepšení, dotazem a formální stížností.
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>
+            Zajistit, aby existoval srozumitelný způsob, jak se mohou občané na zřizovatele obracet
+            ve věcech týkajících se školy (kontaktní místa, e-mail, podatelna).
+          </li>
+          <li>
+            Přijímat a evidovat stížnosti a závažné podněty, které se týkají školy nebo ředitele školy,
+            a přiměřeně na ně reagovat.
+          </li>
+          <li>
+            V případech, které se týkají jednání školy jako organizace nebo ředitele, zajistit věcné prověření
+            stížnosti a vyvození závěrů.
+          </li>
+          <li>
+            U závažnějších podnětů uchovávat záznam o průběhu řešení a přijatých opatřeních.
+          </li>
+          <li>
+            Zajistit, aby postup zřizovatele neohrožoval bezpečnost dětí a zaměstnanců
+            a nevedl k nepřiměřenému zásahu do práv dotčených osob.
+          </li>
+        </ul>
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>
+            Připravit jednoduchou <strong>interní metodiku</strong> pro přijímání a vyřizování stížností
+            a podnětů, včetně rozlišení, co je nejprve věcí školy a kdy vstupuje zřizovatel.
+          </li>
+          <li>
+            Mít <strong>jeden kontaktní kanál</strong> (např. e-mail nebo formulář), kde se podněty shromažďují
+            a kde je jasná odpovědnost za jejich zpracování.
+          </li>
+          <li>
+            Vést stručnou evidenci stížností – datum, kdo podal, čeho se týká, jak byla řešena,
+            jaký je výsledek.
+          </li>
+          <li>
+            Většinu situací nejprve řešit na úrovni školy – podpora ředitele, aby mohl situaci vysvětlit
+            nebo napravit, než dojde k politizaci problému.
+          </li>
+          <li>
+            U opakujících se stížností zvážit <strong>tematickou kontrolu</strong> nebo hlubší prověření
+            dané oblasti (např. klima školy, komunikace, školní družina).
+          </li>
+          <li>
+            O obecných závěrech informovat školy – anonymizovaně, jako zpětnou vazbu a poučení pro všechny.
+          </li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Stížnost přijměte a zaevidujte.</strong><br/>
+            Zapište, kdo a kdy podal stížnost, čeho se týká a jak ji obec obdržela (podatelna, e-mail, osobně).
+          </li>
+          <li>
+            <strong>Rozlište typ podání.</strong><br/>
+            Jde o dotaz, podnět ke zlepšení, nebo formální stížnost? Lze stěžovateli doporučit nejprve řešení
+            přímo ve škole (třídní učitel, ředitel)?
+          </li>
+          <li>
+            <strong>Zapojte školu.</strong><br/>
+            Seznamte ředitele se stížností (s ohledem na ochranu osobních údajů) a požádejte o stanovisko.
+            Dejte škole prostor situaci vysvětlit nebo navrhnout nápravu.
+          </li>
+          <li>
+            <strong>Vyhodnoťte situaci a rozhodněte o dalším postupu.</strong><br/>
+            Podle povahy věci: stačí vyjádření školy, je potřeba osobní jednání, návštěva školy,
+            nebo kontrola konkrétní oblasti?
+          </li>
+          <li>
+            <strong>Informujte stěžovatele.</strong><br/>
+            Stručně, věcně a v přiměřené lhůtě. Vysvětlete, co obec udělala a jaké jsou závěry.
+          </li>
+          <li>
+            <strong>U závažnějších případů sledujte nápravná opatření.</strong><br/>
+            Např. změna v organizaci, úprava pravidel, posílení komunikace školy s rodiči.
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>
+            Přeskakování ředitele školy – řešení stížností „přes hlavu“ vedení školy narušuje jeho autoritu
+            a komplikuje běžný provoz.
+          </li>
+          <li>
+            Neformální a nezdokumentované řešení – u závažnějších podnětů chybí záznam, co se stalo
+            a jak bylo rozhodnuto.
+          </li>
+          <li>
+            Podléhání tlaku „nejhlasitějších“ – zřizovatel musí brát v úvahu zájem všech dětí a škol,
+            nejen jednotlivých skupin rodičů.
+          </li>
+          <li>
+            Sdílení citlivých informací a osobních údajů – je nutné chránit soukromí dětí i zaměstnanců školy.
+          </li>
+          <li>
+            Politizace stížností – stížnosti se využívají v lokálních politických sporech místo věcného řešení.
+          </li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>
+            Interní směrnice obce k přijímání a vyřizování stížností – lze upravit tak, aby zohledňovala
+            specifika škol.
+          </li>
+          <li>
+            Střední článek podpory – možnost konzultace u složitějších případů, mediace mezi školou a rodiči,
+            metodická pomoc se zavedením systému.
+          </li>
+          <li>
+            Inspirace z jiných obcí – příklady formulářů, šablony odpovědí, modelové postupy.
+          </li>
+          <li>
+            Související situace – 
+            <em>Komunikace se školami</em>,
+            <em>Kontrolní činnost zřizovatele</em>,
+            <em>Hodnocení ředitele školy</em>,
+            <em>Krizová komunikace a mimořádné situace</em>.
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KOMSK')">
+        Komunikace se školami
+      </button>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KO')">
+        Kontrolní činnost zřizovatele
+      </button>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-HOD')">
+        Hodnocení ředitele školy
+      </button>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KRIZE')">
+        Krizová komunikace a mimořádné situace
+      </button>
+    </div>
+  </section>
+
+  <!-- Obsah -->
+  <div class="accordion situace-STIZ">
+    <!-- Proč řešit stížnosti systematicky -->
+    <div class="acc-item open">
+      <button class="acc-title">Proč řešit stížnosti a podněty systematicky</button>
+      <div class="acc-content">
+        <p>
+          Stížnosti a podněty mohou být zdrojem zlepšení, ale také zdrojem napětí.
+          Systematický přístup pomáhá:
+        </p>
+        <ul>
+          <li>zachovat férovost vůči škole i stěžovateli,</li>
+          <li>rychleji a věcně řešit konflikty,</li>
+          <li>chránit děti a zaměstnance školy,</li>
+          <li>posilovat důvěru v roli zřizovatele,</li>
+          <li>předcházet eskalaci problémů v médiích a na sociálních sítích.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Rozlišení podnětu a stížnosti -->
+    <div class="acc-item">
+      <button class="acc-title">Rozlišení podnětu, dotazu a stížnosti</button>
+      <div class="acc-content">
+        <p>
+          Ne všechno, co přijde na obec, je formální stížnost. Je užitečné rozlišovat:
+        </p>
+        <ul>
+          <li><strong>Dotaz</strong> – žádost o vysvětlení, informace, upřesnění pravidel.</li>
+          <li><strong>Podnět</strong> – návrh na zlepšení, upozornění na možný problém.</li>
+          <li><strong>Stížnost</strong> – nespokojenost s jednáním nebo postupem školy či jejího zaměstnance.</li>
+        </ul>
+        <p>
+          Správné zařazení pomáhá zvolit odpovídající postup a nezatěžovat zbytečně formálními procesy běžnou komunikaci.
+        </p>
+      </div>
+    </div>
+
+    <!-- Postup při stížnosti -->
+    <div class="acc-item">
+      <button class="acc-title">Postup při řešení stížnosti</button>
+      <div class="acc-content">
+        <p>
+          Základní kroky zřizovatele při stížnosti:
+        </p>
+        <ul>
+          <li>přijetí a evidence,</li>
+          <li>předběžné posouzení, zda je vhodné nejprve řešit se školou,</li>
+          <li>vyžádání stanoviska ředitele školy,</li>
+          <li>případné doplnění informací (rozhovor, podklady),</li>
+          <li>vyhodnocení a sepsání závěrů,</li>
+          <li>informování stěžovatele a školy,</li>
+          <li>u závažných případů sledování nápravných kroků.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Komunikace se školou a stěžovatelem -->
+    <div class="acc-item">
+      <button class="acc-title">Komunikace se školou a stěžovatelem</button>
+      <div class="acc-content">
+        <p>
+          Styl komunikace je často stejně důležitý jako samotný výsledek:
+        </p>
+        <ul>
+          <li>se školou komunikovat partnersky a věcně,</li>
+          <li>se stěžovatelem mluvit s respektem, ale ne slibovat nemožné,</li>
+          <li>používat srozumitelný jazyk, vyhýbat se čistě formálním odpovědím,</li>
+          <li>přiměřeně vysvětlit, jaké jsou možnosti zřizovatele a školy.</li>
+        </ul>
+        <p>
+          Otevřená a klidná komunikace často zabrání dalšímu vyhrocení sporu.
+        </p>
+      </div>
+    </div>
+
+    <!-- Související situace a dokumenty -->
+    <div class="acc-item">
+      <button class="acc-title">Související situace a dokumenty</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-KOMSK')">Komunikace se školami</a></li>
+          <li><a href="javascript:showSituacePage('situace-KO')">Kontrolní činnost zřizovatele</a></li>
+          <li><a href="javascript:showSituacePage('situace-HOD')">Hodnocení ředitele školy</a></li>
+          <li><a href="javascript:showSituacePage('situace-KRIZE')">Krizová komunikace a mimořádné situace</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>	
+	
 <!-- S) Strategické plánování kapacit a sítě škol -->
 <div class="page situace-page" id="situace-SP" style="display:none;">
 <a class="back" href="javascript:showSituacePage('')">← Zpět na přehled situací a jejich řešení</a>
@@ -8703,6 +9113,331 @@ Dobře nastavený systém správy majetku pomáhá šetřit provozní náklady a
   </div>
 </div>
 
+<!-- A) Aktivní zapojování dětí a mládeže do dění obce -->
+<div class="page situace-page" id="situace-DETI" style="display:none;">
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>A) Aktivní zapojování dětí a mládeže do dění obce</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Komunikace a spolupráce, Participace, Komunitní rozvoj,
+      Podpora žáků, Zřizovatelská působnost
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-DETI">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Zapojování dětí a mladých lidí do dění v obci posiluje jejich vztah ke komunitě, rozvíjí jejich
+        občanské kompetence a přináší obci cennou perspektivu. Zřizovatel může podporovat participaci
+        prostřednictvím školních parlamentů, obecních dětských fór, komunitních projektů i
+        participativního rozpočtu. Nejde jen o jednorázové akce, ale o dlouhodobé zapojení mladých lidí
+        do diskusí, rozhodování a rozvoje obce.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+    <div class="teaser-full">
+      <p>
+        Děti a mladí lidé mají vlastní zkušenosti, potřeby a nápady, které se od dospělých často liší.
+        Pokud dostanou prostor je sdílet, mohou ovlivnit rozvoj školy, veřejného prostoru i života obce.
+        Stále více obcí využívá participativní nástroje – dětská a mládežnická fóra, pracovní skupiny,
+        žákovské parlamenty, diskusní akce, soutěže či minigrantové programy.
+      </p>
+      <p>
+        Úlohou zřizovatele je podporovat systémové zapojení dětí: poskytovat prostor, facilitaci,
+        propojení se školami, zpětnou vazbu a možnosti, jak mohou děti své nápady také realizovat.
+      </p>
+    </div>
+  </div>  
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+    <p class="situace-af-intro">
+      Zapojování dětí a mládeže do dění obce má smysl pouze tehdy, když je dlouhodobé, srozumitelné,
+      bezpečné a když děti vidí skutečný dopad svého zapojení. A–F přehled ukazuje, jak může zřizovatel
+      systematicky podporovat participaci – od vytvoření prostoru a pravidel přes facilitaci až po
+      zpětnou vazbu a vyhodnocování.
+    </p>
+
+    <nav class="situace-af-tabs" aria-label="Sekce A–F">
+      <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Zapojování dětí a mládeže posiluje jejich vztah ke komunitě a rozvíjí občanské kompetence –
+          schopnost vyjadřovat názor, naslouchat druhým, diskutovat a nést odpovědnost.
+          Děti přinášejí do obce jiný pohled na veřejný prostor, bezpečnost, kulturní akce nebo fungování školy.
+        </p>
+        <p>
+          Zřizovatel může jejich zapojení podporovat různými formami – od žákovských parlamentů a dětských fór
+          až po participativní rozpočty nebo zapojení do komunitních projektů. Klíčové je, aby měly děti
+          jasná pravidla, podporu dospělých a viditelnou zpětnou vazbu.
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>
+            Zajistit bezpečné a férové podmínky pro zapojování dětí – respektovat jejich věk,
+            ochranu osobních údajů a podporovat prostředí, kde mohou svobodně vyjadřovat své názory.
+          </li>
+          <li>
+            Zajistit komunikaci se školami, školskými radami a dalšími aktéry – aby participace byla koordinovaná
+            a měla jasný účel.
+          </li>
+          <li>
+            Reagovat na podněty, které děti formulují, alespoň základní zpětnou vazbou.
+            Pokud dotaz nebo návrh není realizovatelný, vysvětlit proč.
+          </li>
+          <li>
+            U akcí organizovaných obcí (dětská fóra, workshopy) dbát na bezpečnost a přiměřené podmínky účasti.
+          </li>
+        </ul>
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>
+            Podporovat <strong>žákovské parlamenty</strong> na školách – metodicky, organizačně i finančně.
+          </li>
+          <li>
+            Organizovat <strong>dětská a mládežnická fóra</strong> – například jednou ročně v obci nebo mikroregionu.
+          </li>
+          <li>
+            Vytvořit <strong>participativní rozpočet pro děti a mládež</strong> – menší částka, o jejímž využití rozhodují děti.
+          </li>
+          <li>
+            Zapojujte školy do <strong>komunitních projektů</strong> – úprava hřišť, kulturní akce, projekty veřejného prostoru.
+          </li>
+          <li>
+            Zajistit <strong>facilitátora</strong> pro vedení diskusí – učitel, pracovník obce, odborník z organizace.
+          </li>
+          <li>
+            Sdílet <strong>výstupy z dětských diskusí</strong> s radou obce, komisemi nebo zastupitelstvem.
+          </li>
+          <li>
+            Navázat spolupráci se <strong>středním článkem</strong> nebo neziskovými organizacemi, které se věnují participaci dětí.
+          </li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Vyjasněte cíle.</strong><br/>
+            Chcete slyšet názory dětí na veřejný prostor? Zapojit je do plánování akcí? Podporovat školní parlamenty?
+          </li>
+          <li>
+            <strong>Vyberte vhodnou formu zapojení.</strong><br/>
+            Fórum, workshop, parlament, participativní rozpočet, projektové týmy.
+          </li>
+          <li>
+            <strong>Domluvte se se školami.</strong><br/>
+            Sejít se s řediteli, domluvit proces, bezpečnost, termíny a odborné vedení.
+          </li>
+          <li>
+            <strong>Zajistěte facilitátora a přípravu programu.</strong><br/>
+            Přiměřené věku, srozumitelné a interaktivní.
+          </li>
+          <li>
+            <strong>Realizujte setkání nebo projekt.</strong><br/>
+            Děti formulují své návrhy, dotazy, problémy nebo priority.
+          </li>
+          <li>
+            <strong>Vyhodnoťte výstupy a dejte zpětnou vazbu.</strong><br/>
+            Co se podaří realizovat, co ne a proč? Jak budou děti zapojeny dál?
+          </li>
+          <li>
+            <strong>Pravidelně vyhodnocujte efekt.</strong><br/>
+            Co to přináší obci, školám a dětem? Co je potřeba změnit?
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>
+            Participace nesmí být jen „na oko“ – pokud děti neuvidí výsledky, ztratí důvěru.
+          </li>
+          <li>
+            Příliš složité formuláře nebo administrativa – děti potřebují jasné, jednoduché postupy.
+          </li>
+          <li>
+            Nedostatečná facilitace – diskuse se snadno může zvrtnout do chaosu nebo dominovat malé skupiny.
+          </li>
+          <li>
+            Nejasná pravidla – kdo rozhoduje, co je možné, kdo má na starosti realizaci?
+          </li>
+          <li>
+            Riziko přetížení škol – spolupráce by měla být koordinovaná a respektovat možnosti škol.
+          </li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>
+            Střední článek podpory – facilitace dětských fór, metodické vedení školních parlamentů.
+          </li>
+          <li>
+            Odborné organizace zabývající se dětskou participací – metodiky, facilitace, školení.
+          </li>
+          <li>
+            Příklady dobré praxe z jiných obcí – dětské parlamenty, participativní rozpočty, komunitní projekty.
+          </li>
+          <li>
+            Související situace – 
+            <em>Komunikace se školami</em>,
+            <em>Podpora spolupráce ředitelů škol</em>,
+            <em>Krizová komunikace</em>.
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+      <button class="situace-af-link" type="button"
+              onclick="showSituacePage('situace-KOMSK')">
+        Komunikace se školami
+      </button>
+      <button class="situace-af-link" type="button"
+              onclick="showSituacePage('situace-SPOLRED')">
+        Podpora spolupráce ředitelů škol
+      </button>
+      <button class="situace-af-link" type="button"
+              onclick="showSituacePage('situace-KRIZE')">
+        Krizová komunikace
+      </button>
+    </div>
+  </section>
+  <!-- Obsah -->
+  <div class="accordion situace-DETI">
+    <!-- Proč zapojovat děti a mládež -->
+    <div class="acc-item open">
+      <button class="acc-title">Proč zapojovat děti a mládež do dění obce</button>
+      <div class="acc-content">
+        <p>
+          Děti a mladí lidé v obci:
+        </p>
+        <ul>
+          <li>jinak vnímají veřejný prostor, bezpečnost a služby než dospělí,</li>
+          <li>mají konkrétní zkušenosti z cest do školy, ze hřišť, z kroužků a volnočasových aktivit,</li>
+          <li>učí se, že jejich názor má váhu a může něco změnit,</li>
+          <li>rozvíjejí dovednosti pro život – spolupráci, argumentaci, odpovědnost,</li>
+          <li>budují vztah k obci a větší ochotu v ní zůstávat nebo se do ní vracet.</li>
+        </ul>
+        <p>
+          Pro obec je zapojování dětí investicí do budoucnosti – pomáhá lépe plánovat služby,
+          veřejný prostor i vzdělávání a snižuje riziko konfliktů založených na nepochopení potřeb mladých lidí.
+        </p>
+      </div>
+    </div>
+
+    <!-- Formy participace -->
+    <div class="acc-item">
+      <button class="acc-title">Formy participace dětí a mládeže</button>
+      <div class="acc-content">
+        <p>
+          Zapojení může mít mnoho podob, které lze kombinovat:
+        </p>
+        <ul>
+          <li>školní a žákovské parlamenty – diskuse nad školními i obecními tématy,</li>
+          <li>dětská a mládežnická fóra – setkání zástupců škol s vedením obce,</li>
+          <li>participativní rozpočty – děti rozhodují o využití části prostředků,</li>
+          <li>tematické workshopy – doprava, veřejný prostor, volnočasové aktivity, klima školy,</li>
+          <li>projektové dny a soutěže – návrhy na zlepšení školy či obce,</li>
+          <li>zapojení dětí do přípravy komunitních akcí – slavnosti, sportovní a kulturní akce.</li>
+        </ul>
+        <p>
+          Důležité je volit formu přiměřenou věku a kapacitám škol i obce.
+        </p>
+      </div>
+    </div>
+
+    <!-- Role zřizovatele -->
+    <div class="acc-item">
+      <button class="acc-title">Role zřizovatele v podpoře participace</button>
+      <div class="acc-content">
+        <p>
+          Zřizovatel může participaci dětí a mládeže posilovat zejména tím, že:
+        </p>
+        <ul>
+          <li>zve ředitele a školy k dlouhodobé spolupráci na programech pro děti,</li>
+          <li>zřizuje nebo podporuje dětská a mládežnická fóra a poskytuje jim prostor,</li>
+          <li>vyčleňuje menší část rozpočtu na projekty navržené dětmi,</li>
+          <li>zajišťuje facilitaci a odbornou podporu (interní nebo externí),</li>
+          <li>předává výstupy dětských diskusí radě obce a komisím,</li>
+          <li>dává dětem zpětnou vazbu – co se realizovalo, co ne a proč.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Příklady témat a projektů -->
+    <div class="acc-item">
+      <button class="acc-title">Příklady témat a projektů</button>
+      <div class="acc-content">
+        <p>
+          Mezi častá témata, která děti a mladí lidé otevírají, patří:
+        </p>
+        <ul>
+          <li>bezpečná cesta do školy (chodníky, přechody, cyklostezky),</li>
+          <li>podoba hřišť, sportovišť a míst pro setkávání,</li>
+          <li>nabídka kroužků a volnočasových aktivit,</li>
+          <li>ekologie a péče o veřejný prostor,</li>
+          <li>klima ve škole, vztahy mezi žáky, podpora duševního zdraví,</li>
+          <li>kultury a akce pro mladé (koncerty, filmové večery, turnaje).</li>
+        </ul>
+        <p>
+          Projekty, které děti samy navrhují a pomáhají realizovat, mají obvykle vyšší šanci,
+          že je budou i skutečně používat a pečovat o ně.
+        </p>
+      </div>
+    </div>
+
+    <!-- Související situace a dokumenty -->
+    <div class="acc-item">
+      <button class="acc-title">Související situace a dokumenty</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-KOMSK')">Komunikace se školami</a></li>
+          <li><a href="javascript:showSituacePage('situace-SPOLRED')">Podpora spolupráce ředitelů škol</a></li>
+          <li><a href="javascript:showSituacePage('situace-STIZ')">Stížnosti a podněty ve vztahu ke škole</a></li>
+          <li><a href="javascript:showSituacePage('situace-RESSTIZ')">Řešení stížností</a></li>
+        </ul>
+        <p>
+          Zapojování dětí a mládeže je vhodné provázat se strategickými dokumenty obce
+          (strategický plán rozvoje, komunitní plán, koncepce vzdělávání) a s dlouhodobou komunikací škol a zřizovatele.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
 <div class="page situace-page" id="situace-BEZPECNEPROSTREDI" style="display:none;">
 
   <a class="back" href="javascript:showSituacePage('')">
@@ -12243,6 +12978,311 @@ Zřizovatel může koordinovat spolupráci škol, poradenských zařízení a so
 </div>
 </div>
 </div>
+
+<!-- S) Podpora spolupráce ředitelů škol -->
+<div class="page situace-page" id="situace-SPOLRED" style="display:none;">
+  <a class="back" href="javascript:showSituacePage('')">
+    ← Zpět na přehled situací a jejich řešení
+  </a>
+
+  <h2>S) Podpora spolupráce ředitelů škol</h2>
+
+  <div class="situace-tags-block">
+    <p class="situace-tags">
+      Týká se oblastí: Komunikace a spolupráce, Řízení škol, Strategické plánování,
+      Profesní rozvoj, Zřizovatelská působnost
+    </p>
+  </div>
+
+  <!-- Teaser -->
+  <div class="teaser situace-SPOLRED">
+    <div class="teaser-head">
+      <p class="teaser-label">Stručné shrnutí</p>
+      <p class="teaser-summary">
+        Spolupráce ředitelů posiluje kvalitu škol v obci i regionu. Umožňuje sdílení praxe,
+        společné řešení problémů, sjednocení postupů a vytváření dlouhodobých partnerství.
+        Zřizovatel může propojení škol aktivně podporovat – vytvářet platformy, organizovat setkání,
+        zapojovat školy do projektů nebo pomáhat s koordinací vzdělávacích priorit.
+      </p>
+      <button class="teaser-btn">Zobrazit více</button>
+    </div>
+    <div class="teaser-full">
+      <p>
+        Každý ředitel školy řeší podobné výzvy – provoz, personální situaci, komunikaci s rodiči,
+        práci s rozpočtem, spolupráci s učiteli i plánování rozvoje školy. Pokud zřizovatel
+        vytvoří prostředí, kde si mohou ředitelé navzájem předávat zkušenosti a společně hledat řešení,
+        přispívá tím k lepším podmínkám pro školy i k jednotnější kvalitě vzdělávání v obci.
+      </p>
+      <p>
+        Spolupráce může mít různé podoby: tematické porady, sdílení dobré praxe, společné projekty,
+        mentoring mezi školami nebo koordinace napříč více obcemi. Důležitá je pravidelnost,
+        jasná agenda a konkrétní výstupy, které ředitelům skutečně pomáhají.
+      </p>
+    </div>
+  </div>
+
+  <section class="situace-af situace-af--tabs-minimal" aria-label="Kroky řešení situace">
+    <h3 class="situace-af-heading">Jak situaci řešit krok za krokem</h3>
+    <p class="situace-af-intro">
+      Spolupráce ředitelů není samozřejmost – potřebuje čas, organizaci a podporu.
+      A–F přehled ukazuje, jak může zřizovatel vytvářet prostředí, kde ředitelé sdílejí praxi,
+      koordinují své postupy a společně řeší problémy, které žádná škola sama nevyřeší.
+    </p>
+
+    <nav class="situace-af-tabs" aria-label="Sekce A–F">
+      <button type="button" class="situace-af-tab is-active" data-af="A">A – Přehled</button>
+      <button type="button" class="situace-af-tab" data-af="B">B – Co musíte</button>
+      <button type="button" class="situace-af-tab" data-af="C">C – Co se doporučuje</button>
+      <button type="button" class="situace-af-tab" data-af="D">D – Jak postupovat</button>
+      <button type="button" class="situace-af-tab" data-af="E">E – Na co si dát pozor</button>
+      <button type="button" class="situace-af-tab" data-af="F">F – Podpora a zdroje</button>
+    </nav>
+
+    <div class="situace-af-body">
+
+      <!-- A -->
+      <section class="situace-af-section is-active" data-af="A">
+        <h4>A. Přehled situace</h4>
+        <p>
+          Spolupráce ředitelů škol v jedné obci nebo regionu pomáhá sjednotit přístupy,
+          posiluje profesní komunitu a přispívá k lepšímu řízení škol. Zřizovatel může tuto spolupráci
+          podporovat organizačně, metodicky i finančně. Vytváří tak prostor pro řešení společných témat
+          – od hospodaření po pedagogické priority.
+        </p>
+        <p>
+          Spolupráce je zvlášť důležitá tam, kde jsou školy rozdílně velké, personálně oslabené
+          nebo čelí podobným problémům (absence učitelů, nárůst administrativy, komunikace s rodiči).
+        </p>
+      </section>
+
+      <!-- B -->
+      <section class="situace-af-section" data-af="B">
+        <h4>B. Co musíte (povinnosti zřizovatele)</h4>
+        <ul>
+          <li>
+            Zajistit základní komunikaci se všemi školami a vytvářet prostor pro koordinaci jejich činností.
+          </li>
+          <li>
+
+            Umožnit ředitelům předávat si informace a pracovat s jednotnými pravidly v oblastech,
+            kde za ně nese odpovědnost zřizovatel (např. majetek, provoz, investice).
+          </li>
+          <li>
+            Reagovat na potřeby škol a přizpůsobovat způsob setkávání nebo komunikace podle reálné situace
+            (např. při mimořádných událostech nebo změnách v legislativě).
+          </li>
+        </ul>
+      </section>
+
+      <!-- C -->
+      <section class="situace-af-section" data-af="C">
+        <h4>C. Co se doporučuje</h4>
+        <ul>
+          <li>
+            Zavést <strong>pravidelná společná setkání ředitelů</strong> – například 4× ročně.
+          </li>
+          <li>
+            Mít <strong>jednotnou agendu</strong> – provoz, majetek, bezpečnost, projekty, pedagogické priority.
+          </li>
+          <li>
+            Vytvořit <strong>sdílenou platformu</strong> (online úložiště, interní systém), kde jsou k dispozici
+            důležité dokumenty, metodiky, vzory a zápisy ze setkání.
+          </li>
+          <li>
+            Podporovat <strong>sdílení praxe</strong> – otevřené hodiny, návštěvy v jiných školách, mentoring.
+          </li>
+          <li>
+            Iniciovat nebo podporovat <strong>společné projekty</strong> škol – např. digitální vybavení,
+            prevence rizikového chování, podpora učitelů nebo žákovských projektů.
+          </li>
+          <li>
+            Propojovat spolupráci ředitelů s <strong>krizovou komunikací</strong>, kontrolní činností
+            a strategickým plánováním v obci.
+          </li>
+        </ul>
+      </section>
+
+      <!-- D -->
+      <section class="situace-af-section" data-af="D">
+        <h4>D. Jak postupovat (zjednodušený proces)</h4>
+        <ol>
+          <li>
+            <strong>Domluvte se s řediteli na potřebě setkávání.</strong><br/>
+            Proberte, jaká témata a forma by byla pro školy nejpřínosnější.
+          </li>
+          <li>
+            <strong>Stanovte roční plán spolupráce.</strong><br/>
+            Vytvořte harmonogram setkání a témat – ideálně pevné termíny dopředu.
+          </li>
+          <li>
+            <strong>Připravte agendu a facilitaci setkání.</strong><br/>
+            Agenda může zahrnovat provozní témata, finance, investice, bezpečí,
+            pedagogické projekty nebo sdílení praxe.
+          </li>
+          <li>
+            <strong>Zajistěte sdílené dokumenty.</strong><br/>
+            Zápisy, prezentace, výstupy, metodiky – vše na jednom místě.
+          </li>
+          <li>
+            <strong>Podporujte konkrétní výstupy.</strong><br/>
+            Například sjednocení postupů (BOZP, evidence majetku), společné nákupy,
+            sdílení asistentů pedagoga nebo společné žádosti o dotace.
+          </li>
+          <li>
+            <strong>Pravidelně vyhodnocujte přínos.</strong><br/>
+            Co ředitelé oceňují? Co je zbytečné? Co zlepšit?
+          </li>
+        </ol>
+      </section>
+
+      <!-- E -->
+      <section class="situace-af-section" data-af="E">
+        <h4>E. Na co si dát pozor</h4>
+        <ul>
+          <li>
+            Nesmyslně dlouhá nebo příliš operativní setkání – ředitelé jsou časově vytížení.
+          </li>
+          <li>
+            Neukotvené výstupy – bez zápisu a domluvených kroků se spolupráce ztrácí.
+          </li>
+          <li>
+            Dominance jedné školy či osobnosti – ostatní se pak do sdílení nezapojují.
+          </li>
+          <li>
+            Přetěžování škol požadavky – společné projekty mají pomáhat, ne zatěžovat administrativou navíc.
+          </li>
+          <li>
+            Chybějící návaznost na strategické dokumenty obce – spolupráce pak nemá jasný dopad.
+          </li>
+        </ul>
+      </section>
+
+      <!-- F -->
+      <section class="situace-af-section" data-af="F">
+        <h4>F. Podpora a zdroje</h4>
+        <ul>
+          <li>
+            Střední článek podpory – facilitace setkání, metodická pomoc při budování profesních komunit
+            a při společných projektech.
+          </li>
+          <li>
+            Příklady dobré praxe z jiných obcí – pravidelné sněmy ředitelů, odborné platformy,
+            společné vzdělávání.
+          </li>
+          <li>
+            Projekty financované z národních nebo evropských programů – mohou podpořit společné aktivity škol.
+          </li>
+          <li>
+            Související situace – 
+            <em>Komunikace se školami</em>,
+            <em>Strategické plánování školy</em>,
+            <em>Kontrolní činnost zřizovatele</em>,
+            <em>Krizová komunikace</em>.
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="situace-af-links">
+      <span class="situace-af-links-label">Související situace:</span>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KOMSK')">
+        Komunikace se školami
+      </button>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KO')">
+        Kontrolní činnost zřizovatele
+      </button>
+      <button class="situace-af-link"
+              type="button"
+              onclick="showSituacePage('situace-KRIZE')">
+        Krizová komunikace
+      </button>
+    </div>
+  </section>
+
+  <!-- Obsah -->
+  <div class="accordion situace-SPOLRED">
+    <!-- Proč spolupráci ředitelů podporovat -->
+    <div class="acc-item open">
+      <button class="acc-title">Proč spolupráci ředitelů podporovat</button>
+      <div class="acc-content">
+        <p>
+          Spolupráce ředitelů přináší obci i školám konkrétní přínosy:
+        </p>
+        <ul>
+          <li>zvyšuje profesní oporu pro ředitele, kteří často pracují v izolaci,</li>
+          <li>sjednocuje důležité postupy a usnadňuje řízení škol,</li>
+          <li>pomáhá sdílet zdroje a snižovat duplicity (projekty, metodiky, materiály),</li>
+          <li>umožňuje řešit problémy společně – od provozu po pedagogiku,</li>
+          <li>posiluje kulturu vzájemné důvěry a spolupráce napříč obcí.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Formy spolupráce -->
+    <div class="acc-item">
+      <button class="acc-title">Formy spolupráce ředitelů</button>
+      <div class="acc-content">
+        <p>Spolupráce může mít různé podoby:</p>
+        <ul>
+          <li>společné porady a tematická setkání,</li>
+          <li>sdílení dobré praxe, návštěvy škol, otevřené hodiny,</li>
+          <li>mentorování mezi školami (peer-learning),</li>
+          <li>společné projekty – technologické, personální, pedagogické,</li>
+          <li>spolupráce při krizové komunikaci a řešení mimořádných situací.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Koordinace zřizovatelem -->
+    <div class="acc-item">
+      <button class="acc-title">Role zřizovatele v koordinaci spolupráce</button>
+      <div class="acc-content">
+        <p>
+          Zřizovatel nemusí vést každé setkání, ale je jeho úkolem vytvořit podmínky:
+        </p>
+        <ul>
+          <li>nastavit pravidelnost a strukturu setkávání,</li>
+          <li>zajistit prostor, komunikaci a sdílené dokumenty,</li>
+          <li>propojovat spolupráci s dalšími oblastmi – investicemi, kontrolou, strategií,</li>
+          <li>podporovat rozvoj profesního učení mezi školami,</li>
+          <li>v případě potřeby zapojit střední článek nebo externí odborníky.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bariéry a řešení -->
+    <div class="acc-item">
+      <button class="acc-title">Bariéry spolupráce a jak je překonat</button>
+      <div class="acc-content">
+        <p>Časté překážky a způsoby, jak je řešit:</p>
+        <ul>
+          <li>časová vytíženost ředitelů → kratší, konkrétní a předem plánované schůzky,</li>
+          <li>obavy ze sdílení problémů → vytvořit bezpečné prostředí a partnerský přístup,</li>
+          <li>různá kvalita škol → mentoring, zapojení externích odborníků,</li>
+          <li>nesoulad v procesech mezi školami → společně vytvořené minimální standardy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Související situace -->
+    <div class="acc-item">
+      <button class="acc-title">Související situace a dokumenty</button>
+      <div class="acc-content">
+        <ul>
+          <li><a href="javascript:showSituacePage('situace-KOMSK')">Komunikace se školami</a></li>
+          <li><a href="javascript:showSituacePage('situace-KO')">Kontrolní činnost zřizovatele</a></li>
+          <li><a href="javascript:showSituacePage('situace-KRIZE')">Krizová komunikace</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="page situace-page" id="situace-U" style="display:none;">
 <a class="back" href="javascript:showSituacePage('')">← Zpět na přehled situací a jejich řešení</a>
 <h2>P) Podpora vedení školy (supervize, mentoring, well-being ředitelů)</h2>
